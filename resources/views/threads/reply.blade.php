@@ -2,7 +2,7 @@
         <div class="card-body">
     <div id="reply-{{ $reply->id }}" class="card">
         <h5 class="card-title">
-            <a href="{{ route('profile', $reply->owner) }}">
+            <a href="{{ '/@' . $reply->owner->username }}">
                 {{ $reply->owner->name }}
             </a> said {{ $reply->created_at->diffForHumans() }}...
         </h5>

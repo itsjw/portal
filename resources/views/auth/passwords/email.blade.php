@@ -11,44 +11,68 @@
 @endpush
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-md-center mt-5">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Reset Password</h4>
-                        @if (session('status'))
-                            <div class="alert alert-success">
-                                {{ session('status') }}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Reset Password
+                </h1>
+            </div>
+        </div>
+    </section>
+
+    <div class="columns is-marginless is-centered">
+        <div class="column is-5">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Reset Password</p>
+                </header>
+
+                <div class="card-content">
+                    @if (session('status'))
+                        <div class="notification">
+                            {{ session('status') }}
+                        </div>
+                    @endif
+
+                    <form class="forgot-password-form" method="POST" action="{{ route('password.email') }}">
+
+                        {{ csrf_field() }}
+
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">E-Mail Address</label>
                             </div>
-                        @endif
 
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/password/email') }}">
-                            {!! csrf_field() !!}
-
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
-
-                                <div class="col-md-12">
-                                    <input type="email" class="form-control" name="email" value="{{ old('email') }}">
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" id="email" type="email" name="email"
+                                               value="{{ old('email') }}" required autofocus>
+                                    </p>
 
                                     @if ($errors->has('email'))
-                                        <span class="form-text text-muted">
-                                        <strong>{{ $errors->first('email') }}</strong>
-                                    </span>
+                                        <p class="help is-danger">
+                                            {{ $errors->first('email') }}
+                                        </p>
                                     @endif
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div class="col-md-6 col-md-offset-4">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-envelope"></i>Send Password Reset Link
-                                    </button>
+                        <div class="field is-horizontal">
+                            <div class="field-label"></div>
+
+                            <div class="field-body">
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        <button type="submit" class="button is-primary">Send Password Reset Link
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>

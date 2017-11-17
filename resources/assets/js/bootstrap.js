@@ -2,7 +2,6 @@
 window.Vue = require('vue');
 
 window._ = require('lodash');
-import Popper from 'popper.js/dist/umd/popper.js';
 
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
@@ -12,10 +11,22 @@ import Popper from 'popper.js/dist/umd/popper.js';
 
 try {
     window.$ = window.jQuery = require('jquery');
-    window.Tether = require('tether');
-    window.Popper = Popper;
-    require('bootstrap');
+
 } catch (e) {}
+
+document.addEventListener('DOMContentLoaded', function () {
+    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+    if ($navbarBurgers.length > 0) {
+        $navbarBurgers.forEach(function ($el) {
+            $el.addEventListener('click', function () {
+                var target = $el.dataset.target;
+                var $target = document.getElementById(target);
+                $el.classList.toggle('is-active');
+                $target.classList.toggle('is-active');
+            });
+        });
+    }
+});
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests

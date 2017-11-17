@@ -25,7 +25,7 @@
                         <div class="card-body">
                             <p>
                                 This thread was published {{ $thread->created_at->diffForHumans() }} by
-                                <a href="#">{{ $thread->creator->username }}</a>, and currently
+                                <a href="{{ '/@' . $thread->creator->username }}">{{ $thread->creator->username }}</a>, and currently
                                 has <span v-text="repliesCount"></span> {{ str_plural('comment', $thread->replies_count) }}
                                 .
                             </p>

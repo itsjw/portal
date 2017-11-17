@@ -11,13 +11,21 @@
 @endpush
 
 @section('content')
-    <div class="jumbotron">
-        <div class="container p-5">
-            <h1 class="display-1">Dashboard</h1>
+    <div class="container">
+        <div class="columns is- is-marginless is-centered">
+            <div class="column is-7">
+                <nav class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Dashboard
+                        </p>
+                    </header>
 
-            <p class="lead ml-2 text-success">
-                You are logged in!
-            </p>
+                    <div class="card-content">
+                        You are logged in!
+                    </div>
+                </nav>
+            </div>
         </div>
     </div>
 @endsection

@@ -11,66 +11,101 @@
 @endpush
 
 @section('content')
-    <div class="container">
-        <div class="row justify-content-md-center mt-5">
-            <div class="col-md-8">
-                <div class="card">
-                    <div class="card-body">
-                        <h4 class="card-title text-center">Login</h4>
-                        <form class="form-horizontal" role="form" method="POST" action="{{ url('/login') }}">
-                            {!! csrf_field() !!}
+    <section class="hero is-primary">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">
+                    Login
+                </h1>
+            </div>
+        </div>
+    </section>
 
-                            <div class="form-group{{ $errors->has('email') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">E-Mail Address</label>
+    <div class="columns is-marginless is-centered">
+        <div class="column is-5">
+            <div class="card">
+                <header class="card-header">
+                    <p class="card-header-title">Login</p>
+                </header>
 
-                                <div class="col-md-12">
-                                    <input type="email" class="form-control" name="email"
-                                           value="{{ old('email') }}">
+                <div class="card-content">
+                    <form class="login-form" method="POST" action="{{ route('login') }}">
+                        {{ csrf_field() }}
+
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">E-Mail Address</label>
+                            </div>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" id="email" type="email" name="email"
+                                               value="{{ old('email') }}" required autofocus>
+                                    </p>
 
                                     @if ($errors->has('email'))
-                                        <span class="form-text text-muted">
+                                        <p class="help is-danger">
                                             {{ $errors->first('email') }}
-                                        </span>
+                                        </p>
                                     @endif
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="form-group{{ $errors->has('password') ? ' has-error' : '' }}">
-                                <label class="col-md-4 control-label">Password</label>
+                        <div class="field is-horizontal">
+                            <div class="field-label">
+                                <label class="label">Password</label>
+                            </div>
 
-                                <div class="col-md-12">
-                                    <input type="password" class="form-control" name="password">
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <input class="input" id="password" type="password" name="password" required>
+                                    </p>
 
                                     @if ($errors->has('password'))
-                                        <span class="form-text text-muted">
+                                        <p class="help is-danger">
                                             {{ $errors->first('password') }}
-                                        </span>
+                                        </p>
                                     @endif
                                 </div>
                             </div>
+                        </div>
 
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <div class="checkbox">
-                                        <label>
-                                            <input type="checkbox" name="remember"> Remember Me
+                        <div class="field is-horizontal">
+                            <div class="field-label"></div>
+
+                            <div class="field-body">
+                                <div class="field">
+                                    <p class="control">
+                                        <label class="checkbox">
+                                            <input type="checkbox"
+                                                   name="remember" {{ old('remember') ? 'checked' : '' }}> Remember Me
                                         </label>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="field is-horizontal">
+                            <div class="field-label"></div>
+
+                            <div class="field-body">
+                                <div class="field is-grouped">
+                                    <div class="control">
+                                        <button type="submit" class="button is-primary">Login</button>
+                                    </div>
+
+                                    <div class="control">
+                                        <a href="{{ route('password.request') }}">
+                                            Forgot Your Password?
+                                        </a>
                                     </div>
                                 </div>
                             </div>
-
-                            <div class="form-group">
-                                <div class="col-md-12">
-                                    <button type="submit" class="btn btn-primary">
-                                        <i class="fa fa-btn fa-sign-in"></i>Login
-                                    </button>
-
-                                    <a class="btn btn-link" href="{{ url('/password/reset') }}">Forgot Your
-                                        Password?</a>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
