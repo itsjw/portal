@@ -41,7 +41,7 @@
                  class="mr-1 rounded-circle">
 
             <span class="flex">
-                <a href="{{ route('profile', $thread->creator) }}">{{ $thread->creator->username }}</a> posted: <span v-text="title"></span>
+                <a href="{{ '/@' . $thread->creator->username }}">{{ $thread->creator->username }}</a> posted: <span v-text="title"></span>
             </span>
         </div>
     </div>

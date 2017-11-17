@@ -4,7 +4,7 @@
             <div class="card-header">
                 <div class="level">
                     <h6 class="flex">
-                        <a :href="'/profiles/' + reply.owner.name"
+                        <a :href="'/@' + reply.owner.username"
                            v-text="reply.owner.name">
                         </a> said <span v-text="ago"></span>
                     </h6>

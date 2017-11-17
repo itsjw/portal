@@ -56,6 +56,6 @@ Route::post('/threads/{channel}/{thread}/subscriptions', 'Web\Forums\ThreadSubsc
 Route::delete('/threads/{channel}/{thread}/subscriptions', 'Web\Forums\ThreadSubscriptionsController@destroy')->middleware('auth');
 Route::post('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@store');
 Route::delete('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@destroy');
-Route::get('/profiles/{user}', 'Web\Users\ProfilesController@show')->name('profile');
+Route::get('/@{user}', 'Web\Users\ProfilesController@show')->name('profile');
 Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');

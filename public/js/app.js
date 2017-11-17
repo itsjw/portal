@@ -78114,7 +78114,7 @@ var render = function() {
         _c("div", { staticClass: "level" }, [
           _c("h6", { staticClass: "flex" }, [
             _c("a", {
-              attrs: { href: "/profiles/" + _vm.reply.owner.name },
+              attrs: { href: "/@" + _vm.reply.owner.username },
               domProps: { textContent: _vm._s(_vm.reply.owner.name) }
             }),
             _vm._v(" said "),
