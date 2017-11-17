@@ -1,192 +1,27 @@
-<nav class="navbar is-transparent has-shadow">
-    <div class="navbar-brand">
-        <a class="navbar-item" href="/">
-            <img src="https://bulma.io/images/bulma-logo.png" alt="Bulma: a modern CSS framework based on Flexbox" width="112" height="28">
-        </a>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-    </div>
-
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
-        <div class="navbar-start">
-            <a class="navbar-item" href="/">
-                Home
-            </a>
-            <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/documentation/overview/start/">
-                    Docs
+<nav class="bg-white h-12 shadow mb-8">
+    <div class="container mx-auto h-full">
+        <div class="flex items-center justify-center h-12">
+            <div class="mr-6">
+                <a href="{{ url('/') }}" class="no-underline">
+                    {{ config('app.name', 'Laravel') }}
                 </a>
-                <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="/documentation/overview/start/">
-                        Overview
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                        Modifiers
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                        Columns
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                        Layout
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                        Form
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                        Elements
-                    </a>
-                    <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                        Components
-                    </a>
-                </div>
             </div>
+            <div class="flex-1 text-right">
+                @guest
+                    <a class="no-underline hover:underline text-grey-darker pr-3 text-sm" href="{{ url('/login') }}">Login</a>
+                    <a class="no-underline hover:underline text-grey-darker text-sm" href="{{ url('/register') }}">Register</a>
+                    @else
+                        <span class="text-grey-darker text-sm pr-4">{{ Auth::user()->name }}</span>
 
-            <div class="navbar-item has-dropdown is-hoverable is-mega">
-                <div class="navbar-link">
-                    Forums
-                </div>
-                <div id="blogDropdown" class="navbar-dropdown">
-                    <div class="container is-fluid">
-                        <div class="columns">
-                            <div class="column" >
-                                <h1 class="title is-6 is-mega-menu-title">Main</h1>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="column" >
-                                <h1 class="title is-6 is-mega-menu-title">Popular</h1>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="column" >
-                                <h1 class="title is-6 is-mega-menu-title">Sub Menu Title</h1>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                            </div>
-                            <div class="column" >
-                                <h1 class="title is-6 is-mega-menu-title">Sub Menu Title</h1>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
-                                    <div class="navbar-content">
-                                        <p>
-                                            <small class="has-text-info">03 Aug 2017</small>
-                                        </p>
-                                        <p>New feature: list of tags</p>
-                                    </div>
-                                </a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div class="navbar-end">
-            @if (Auth::guest())
-                <a class="navbar-item " href="{{ route('login') }}">Login</a>
-                <a class="navbar-item " href="{{ route('register') }}">Register</a>
-            @else
-                <div class="navbar-item has-dropdown is-hoverable">
-                    <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
-
-                    <div class="navbar-dropdown">
-                        <a class="navbar-item" href="{{ route('logout') }}"
-                           onclick="event.preventDefault();document.getElementById('logout-form').submit();">
-                            Logout
-                        </a>
-
-                        <form id="logout-form" action="{{ route('logout') }}" method="POST"
-                              style="display: none;">
+                        <a href="{{ route('logout') }}"
+                           class="no-underline hover:underline text-grey-darker text-sm"
+                           onclick="event.preventDefault();
+                                document.getElementById('logout-form').submit();">Logout</a>
+                        <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
                             {{ csrf_field() }}
                         </form>
-                    </div>
-                </div>
-            @endif
+                        @endguest
+            </div>
         </div>
     </div>
 </nav>
