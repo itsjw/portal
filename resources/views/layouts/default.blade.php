@@ -11,17 +11,12 @@
     <title>@yield('page_title') - {{ config('app.name', 'phpmap.co') }}</title>
 
     <!-- Styles -->
+    <link rel="stylesheet" href="https://use.typekit.net/iqy1okj.css">
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
-    <link href="{{ mix('css/shards.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     @stack('styles')
     <style>
         body { padding-bottom: 100px; }
-        .level { display: flex; align-items: center; }
-        .level-item { margin-right: 1em; }
-        .flex { flex: 1; }
-        .mr-1 { margin-right: 1em; }
-        .ml-a { margin-left: auto; }
         [v-cloak] { display: none; }
     </style>
 
@@ -35,7 +30,7 @@
     </script>
     @stack('header_scripts')
 </head>
-<body>
+<body class="bg-grey-lighter h-screen font-sans">
 <div id="app">
     @include('_includes.navigation')
 

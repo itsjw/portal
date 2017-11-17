@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('page_title', 'Welcome')
+@section('page_title', 'PageTitle')
 
 @push('header_scripts')
 
@@ -11,11 +11,7 @@
 @endpush
 
 @section('content')
-    <div class="container">
-        <div class="map-wrapper map-responsive">
-            <google-map :allusergroups="{{ $usergroups }}"></google-map>
-        </div>
-    </div>
+
 @endsection
 
 @push('scripts')

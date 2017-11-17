@@ -1,16 +1,5 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Web Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register web routes for your application. These
-| routes are loaded by the RouteServiceProvider within a group which
-| contains the "web" middleware group. Now create something great!
-|
-*/
-
 Route::get('/', 'Web\SiteController@getMap');
 
 Auth::routes();
@@ -24,15 +13,19 @@ Route::get('/test/{id}', function ($id) {
 
 Route::get('/confirm/{token}', function ($token) {
     $user = \App\Models\User::whereConfirmationToken($token)->firstOrFail();
+
     $user->confirmed_at = now();
     $user->confirmation_token = null;
     $user->save();
+
     return view('auth.confirmed');
 });
 
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/public-api/users', 'Api\Users\UserController@index');
+
+
 
 /*
  * Forum Routes
@@ -56,6 +49,11 @@ Route::post('/threads/{channel}/{thread}/subscriptions', 'Web\Forums\ThreadSubsc
 Route::delete('/threads/{channel}/{thread}/subscriptions', 'Web\Forums\ThreadSubscriptionsController@destroy')->middleware('auth');
 Route::post('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@store');
 Route::delete('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@destroy');
+
 Route::get('/@{user}', 'Web\Users\ProfilesController@show')->name('profile');
+Route::get('/profiles/{username}', function($username) {
+    return redirect('/@' . $username);
+});
+
 Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');

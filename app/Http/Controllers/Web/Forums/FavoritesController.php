@@ -8,14 +8,6 @@ use App\Http\Controllers\Controller;
 class FavoritesController extends Controller
 {
     /**
-     * Create a new controller instance.
-     */
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
-
-    /**
      * Store a new favorite in the database.
      *
      * @param  Reply $reply

@@ -12,9 +12,9 @@
 
 @section('content')
     <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="row">
+        <div class="columns is- is-marginless is-centered">
+            <div class="column">
+                <div class="columns">
                     @include ('threads._list')
                 </div>
 

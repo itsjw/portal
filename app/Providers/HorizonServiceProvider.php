@@ -17,6 +17,7 @@ class HorizonServiceProvider extends ServiceProvider
     {
         Horizon::routeMailNotificationsTo(config('horizon.email'));
         Horizon::routeSlackNotificationsTo(config('horizon.slack_webhook_url'));
+
         Horizon::auth(function (Request $request) {
             if (app()->environment('local')) {
                 return true;
@@ -28,7 +29,7 @@ class HorizonServiceProvider extends ServiceProvider
                 return false;
             }
 
-            return ends_with($admin->email, '@phpmap.co');
+            return ends_with($admin->email, '@mapawa.de');
         });
     }
 
