@@ -1,32 +1,5 @@
 
-window.Vue = require('vue');
-
 window._ = require('lodash');
-
-/**
- * We'll load jQuery and the Bootstrap jQuery plugin which provides support
- * for JavaScript based Bootstrap features such as modals and tabs. This
- * code may be modified to fit the specific needs of your application.
- */
-
-try {
-    window.$ = window.jQuery = require('jquery');
-
-} catch (e) {}
-
-document.addEventListener('DOMContentLoaded', function () {
-    var $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
-    if ($navbarBurgers.length > 0) {
-        $navbarBurgers.forEach(function ($el) {
-            $el.addEventListener('click', function () {
-                var target = $el.dataset.target;
-                var $target = document.getElementById(target);
-                $el.classList.toggle('is-active');
-                $target.classList.toggle('is-active');
-            });
-        });
-    }
-});
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -58,42 +31,11 @@ if (token) {
  * allows your team to easily build robust real-time web applications.
  */
 
-import Echo from 'laravel-echo'
+// import Echo from 'laravel-echo'
 
-window.Pusher = require('pusher-js');
+// window.Pusher = require('pusher-js');
 
-window.Echo = new Echo({
-    broadcaster: 'pusher',
-    key: '99a56b0e0df725be4d7f',
-    cluster: 'eu'
-});
-
-window.places = require('places.js');
-window.collect = require('collect.js');
-
-window.Feeds = require('pusher-feeds-client');
-const feeds = new Feeds({
-    instanceLocator: "v1:us1:f3526af0-52c1-4034-b808-7cecc715579b",
-});
-
-const userFeed = feeds.feed("userFeed");
-
-let authorizations = require('./authorizations');
-
-Vue.prototype.authorize = function (...params) {
-    if (! window.App.signedIn) return false;
-
-    if (typeof params[0] === 'string') {
-        return authorizations[params[0]](params[1]);
-    }
-
-    return params[0](window.App.user);
-};
-
-Vue.prototype.signedIn = window.App.signedIn;
-
-window.events = new Vue();
-
-window.flash = function (message, level = 'success') {
-    window.events.$emit('flash', { message, level });
-};
+// window.Echo = new Echo({
+//     broadcaster: 'pusher',
+//     key: 'your-pusher-key'
+// });

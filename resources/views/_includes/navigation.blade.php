@@ -44,6 +44,126 @@
                     </a>
                 </div>
             </div>
+
+            <div class="navbar-item has-dropdown is-hoverable is-mega">
+                <div class="navbar-link">
+                    Forums
+                </div>
+                <div id="blogDropdown" class="navbar-dropdown">
+                    <div class="container is-fluid">
+                        <div class="columns">
+                            <div class="column" >
+                                <h1 class="title is-6 is-mega-menu-title">Main</h1>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column" >
+                                <h1 class="title is-6 is-mega-menu-title">Popular</h1>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column" >
+                                <h1 class="title is-6 is-mega-menu-title">Sub Menu Title</h1>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="column" >
+                                <h1 class="title is-6 is-mega-menu-title">Sub Menu Title</h1>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                                <a class="navbar-item" href="/2017/08/03/list-of-tags/">
+                                    <div class="navbar-content">
+                                        <p>
+                                            <small class="has-text-info">03 Aug 2017</small>
+                                        </p>
+                                        <p>New feature: list of tags</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="navbar-end">

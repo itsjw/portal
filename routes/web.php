@@ -57,3 +57,11 @@ Route::get('/profiles/{username}', function($username) {
 
 Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+

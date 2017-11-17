@@ -487,6 +487,7 @@ button,
 [role=button] {
   cursor: pointer;
 }
+
 /**
  * Here you would add any of your custom component classes; stuff that you'd
  * want loaded *before* the utilities so that the utilities could still
@@ -502,6 +503,7 @@ button,
  * @import "components/buttons";
  * @import "components/forms";
  */
+
 /**
  * This injects all of Tailwind's utility classes, generated based on your
  * config file.
@@ -582,6 +584,14 @@ button,
   font-size: 3rem;
 }
 
+.text-6xl {
+  font-size: 4rem;
+}
+
+.text-7xl {
+  font-size: 5.25rem;
+}
+
 .font-hairline,
 .hover\:font-hairline:hover {
   font-weight: 100;
@@ -628,7 +638,7 @@ button,
 }
 
 .font-sans {
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
 }
 
 .font-serif {
@@ -1002,6 +1012,41 @@ button,
 .text-pink-lightest,
 .hover\:text-pink-lightest:hover {
   color: #ffebef;
+}
+
+.text-brand-darkest,
+.hover\:text-brand-darkest:hover {
+  color: #542605;
+}
+
+.text-brand-darker,
+.hover\:text-brand-darker:hover {
+  color: #7f4012;
+}
+
+.text-brand-dark,
+.hover\:text-brand-dark:hover {
+  color: #de751f;
+}
+
+.text-brand,
+.hover\:text-brand:hover {
+  color: #f6993f;
+}
+
+.text-brand-light,
+.hover\:text-brand-light:hover {
+  color: #faad63;
+}
+
+.text-brand-lighter,
+.hover\:text-brand-lighter:hover {
+  color: #fcd9b6;
+}
+
+.text-brand-lightest,
+.hover\:text-brand-lightest:hover {
+  color: #fff5eb;
 }
 
 .leading-none {
@@ -1528,6 +1573,41 @@ button,
   background-color: #ffebef;
 }
 
+.bg-brand-darkest,
+.hover\:bg-brand-darkest:hover {
+  background-color: #542605;
+}
+
+.bg-brand-darker,
+.hover\:bg-brand-darker:hover {
+  background-color: #7f4012;
+}
+
+.bg-brand-dark,
+.hover\:bg-brand-dark:hover {
+  background-color: #de751f;
+}
+
+.bg-brand,
+.hover\:bg-brand:hover {
+  background-color: #f6993f;
+}
+
+.bg-brand-light,
+.hover\:bg-brand-light:hover {
+  background-color: #faad63;
+}
+
+.bg-brand-lighter,
+.hover\:bg-brand-lighter:hover {
+  background-color: #fcd9b6;
+}
+
+.bg-brand-lightest,
+.hover\:bg-brand-lightest:hover {
+  background-color: #fff5eb;
+}
+
 .bg-bottom {
   background-position: bottom;
 }
@@ -1678,26 +1758,6 @@ button,
 
 .border-l-8 {
   border-left: 8px solid #dae4e9;
-}
-
-.border-12 {
-  border: 12px solid #dae4e9;
-}
-
-.border-t-12 {
-  border-top: 12px solid #dae4e9;
-}
-
-.border-r-12 {
-  border-right: 12px solid #dae4e9;
-}
-
-.border-b-12 {
-  border-bottom: 12px solid #dae4e9;
-}
-
-.border-l-12 {
-  border-left: 12px solid #dae4e9;
 }
 
 .border-transparent,
@@ -2063,6 +2123,41 @@ button,
 .border-pink-lightest,
 .hover\:border-pink-lightest:hover {
   border-color: #ffebef;
+}
+
+.border-brand-darkest,
+.hover\:border-brand-darkest:hover {
+  border-color: #542605;
+}
+
+.border-brand-darker,
+.hover\:border-brand-darker:hover {
+  border-color: #7f4012;
+}
+
+.border-brand-dark,
+.hover\:border-brand-dark:hover {
+  border-color: #de751f;
+}
+
+.border-brand,
+.hover\:border-brand:hover {
+  border-color: #f6993f;
+}
+
+.border-brand-light,
+.hover\:border-brand-light:hover {
+  border-color: #faad63;
+}
+
+.border-brand-lighter,
+.hover\:border-brand-lighter:hover {
+  border-color: #fcd9b6;
+}
+
+.border-brand-lightest,
+.hover\:border-brand-lightest:hover {
+  border-color: #fff5eb;
 }
 
 .border-dashed {
@@ -3582,6 +3677,7 @@ button,
 .cursor-not-allowed {
   cursor: not-allowed;
 }
+
 /**
  * Here you would add any custom utilities you need that don't come out of the
  * box with Tailwind.
@@ -3596,14 +3692,6 @@ button,
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
-/**
- * Use this directive to control where Tailwind injects the responsive
- * variations of each utility.
- *
- * If omitted, Tailwind will append these classes to the very end of
- * your stylesheet by default.
- */
-@tailwind screens;
 
 @media (min-width: 576px) {
   .sm\:list-reset {
@@ -3654,6 +3742,14 @@ button,
     font-size: 3rem;
   }
 
+  .sm\:text-6xl {
+    font-size: 4rem;
+  }
+
+  .sm\:text-7xl {
+    font-size: 5.25rem;
+  }
+
   .sm\:font-hairline,
   .sm\:hover\:font-hairline:hover {
     font-weight: 100;
@@ -3700,7 +3796,7 @@ button,
   }
 
   .sm\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   }
 
   .sm\:font-serif {
@@ -4074,6 +4170,41 @@ button,
   .sm\:text-pink-lightest,
   .sm\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .sm\:text-brand-darkest,
+  .sm\:hover\:text-brand-darkest:hover {
+    color: #542605;
+  }
+
+  .sm\:text-brand-darker,
+  .sm\:hover\:text-brand-darker:hover {
+    color: #7f4012;
+  }
+
+  .sm\:text-brand-dark,
+  .sm\:hover\:text-brand-dark:hover {
+    color: #de751f;
+  }
+
+  .sm\:text-brand,
+  .sm\:hover\:text-brand:hover {
+    color: #f6993f;
+  }
+
+  .sm\:text-brand-light,
+  .sm\:hover\:text-brand-light:hover {
+    color: #faad63;
+  }
+
+  .sm\:text-brand-lighter,
+  .sm\:hover\:text-brand-lighter:hover {
+    color: #fcd9b6;
+  }
+
+  .sm\:text-brand-lightest,
+  .sm\:hover\:text-brand-lightest:hover {
+    color: #fff5eb;
   }
 
   .sm\:leading-none {
@@ -4600,6 +4731,41 @@ button,
     background-color: #ffebef;
   }
 
+  .sm\:bg-brand-darkest,
+  .sm\:hover\:bg-brand-darkest:hover {
+    background-color: #542605;
+  }
+
+  .sm\:bg-brand-darker,
+  .sm\:hover\:bg-brand-darker:hover {
+    background-color: #7f4012;
+  }
+
+  .sm\:bg-brand-dark,
+  .sm\:hover\:bg-brand-dark:hover {
+    background-color: #de751f;
+  }
+
+  .sm\:bg-brand,
+  .sm\:hover\:bg-brand:hover {
+    background-color: #f6993f;
+  }
+
+  .sm\:bg-brand-light,
+  .sm\:hover\:bg-brand-light:hover {
+    background-color: #faad63;
+  }
+
+  .sm\:bg-brand-lighter,
+  .sm\:hover\:bg-brand-lighter:hover {
+    background-color: #fcd9b6;
+  }
+
+  .sm\:bg-brand-lightest,
+  .sm\:hover\:bg-brand-lightest:hover {
+    background-color: #fff5eb;
+  }
+
   .sm\:bg-bottom {
     background-position: bottom;
   }
@@ -4750,26 +4916,6 @@ button,
 
   .sm\:border-l-8 {
     border-left: 8px solid #dae4e9;
-  }
-
-  .sm\:border-12 {
-    border: 12px solid #dae4e9;
-  }
-
-  .sm\:border-t-12 {
-    border-top: 12px solid #dae4e9;
-  }
-
-  .sm\:border-r-12 {
-    border-right: 12px solid #dae4e9;
-  }
-
-  .sm\:border-b-12 {
-    border-bottom: 12px solid #dae4e9;
-  }
-
-  .sm\:border-l-12 {
-    border-left: 12px solid #dae4e9;
   }
 
   .sm\:border-transparent,
@@ -5135,6 +5281,41 @@ button,
   .sm\:border-pink-lightest,
   .sm\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .sm\:border-brand-darkest,
+  .sm\:hover\:border-brand-darkest:hover {
+    border-color: #542605;
+  }
+
+  .sm\:border-brand-darker,
+  .sm\:hover\:border-brand-darker:hover {
+    border-color: #7f4012;
+  }
+
+  .sm\:border-brand-dark,
+  .sm\:hover\:border-brand-dark:hover {
+    border-color: #de751f;
+  }
+
+  .sm\:border-brand,
+  .sm\:hover\:border-brand:hover {
+    border-color: #f6993f;
+  }
+
+  .sm\:border-brand-light,
+  .sm\:hover\:border-brand-light:hover {
+    border-color: #faad63;
+  }
+
+  .sm\:border-brand-lighter,
+  .sm\:hover\:border-brand-lighter:hover {
+    border-color: #fcd9b6;
+  }
+
+  .sm\:border-brand-lightest,
+  .sm\:hover\:border-brand-lightest:hover {
+    border-color: #fff5eb;
   }
 
   .sm\:border-dashed {
@@ -6705,6 +6886,14 @@ button,
     font-size: 3rem;
   }
 
+  .md\:text-6xl {
+    font-size: 4rem;
+  }
+
+  .md\:text-7xl {
+    font-size: 5.25rem;
+  }
+
   .md\:font-hairline,
   .md\:hover\:font-hairline:hover {
     font-weight: 100;
@@ -6751,7 +6940,7 @@ button,
   }
 
   .md\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   }
 
   .md\:font-serif {
@@ -7125,6 +7314,41 @@ button,
   .md\:text-pink-lightest,
   .md\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .md\:text-brand-darkest,
+  .md\:hover\:text-brand-darkest:hover {
+    color: #542605;
+  }
+
+  .md\:text-brand-darker,
+  .md\:hover\:text-brand-darker:hover {
+    color: #7f4012;
+  }
+
+  .md\:text-brand-dark,
+  .md\:hover\:text-brand-dark:hover {
+    color: #de751f;
+  }
+
+  .md\:text-brand,
+  .md\:hover\:text-brand:hover {
+    color: #f6993f;
+  }
+
+  .md\:text-brand-light,
+  .md\:hover\:text-brand-light:hover {
+    color: #faad63;
+  }
+
+  .md\:text-brand-lighter,
+  .md\:hover\:text-brand-lighter:hover {
+    color: #fcd9b6;
+  }
+
+  .md\:text-brand-lightest,
+  .md\:hover\:text-brand-lightest:hover {
+    color: #fff5eb;
   }
 
   .md\:leading-none {
@@ -7651,6 +7875,41 @@ button,
     background-color: #ffebef;
   }
 
+  .md\:bg-brand-darkest,
+  .md\:hover\:bg-brand-darkest:hover {
+    background-color: #542605;
+  }
+
+  .md\:bg-brand-darker,
+  .md\:hover\:bg-brand-darker:hover {
+    background-color: #7f4012;
+  }
+
+  .md\:bg-brand-dark,
+  .md\:hover\:bg-brand-dark:hover {
+    background-color: #de751f;
+  }
+
+  .md\:bg-brand,
+  .md\:hover\:bg-brand:hover {
+    background-color: #f6993f;
+  }
+
+  .md\:bg-brand-light,
+  .md\:hover\:bg-brand-light:hover {
+    background-color: #faad63;
+  }
+
+  .md\:bg-brand-lighter,
+  .md\:hover\:bg-brand-lighter:hover {
+    background-color: #fcd9b6;
+  }
+
+  .md\:bg-brand-lightest,
+  .md\:hover\:bg-brand-lightest:hover {
+    background-color: #fff5eb;
+  }
+
   .md\:bg-bottom {
     background-position: bottom;
   }
@@ -7801,26 +8060,6 @@ button,
 
   .md\:border-l-8 {
     border-left: 8px solid #dae4e9;
-  }
-
-  .md\:border-12 {
-    border: 12px solid #dae4e9;
-  }
-
-  .md\:border-t-12 {
-    border-top: 12px solid #dae4e9;
-  }
-
-  .md\:border-r-12 {
-    border-right: 12px solid #dae4e9;
-  }
-
-  .md\:border-b-12 {
-    border-bottom: 12px solid #dae4e9;
-  }
-
-  .md\:border-l-12 {
-    border-left: 12px solid #dae4e9;
   }
 
   .md\:border-transparent,
@@ -8186,6 +8425,41 @@ button,
   .md\:border-pink-lightest,
   .md\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .md\:border-brand-darkest,
+  .md\:hover\:border-brand-darkest:hover {
+    border-color: #542605;
+  }
+
+  .md\:border-brand-darker,
+  .md\:hover\:border-brand-darker:hover {
+    border-color: #7f4012;
+  }
+
+  .md\:border-brand-dark,
+  .md\:hover\:border-brand-dark:hover {
+    border-color: #de751f;
+  }
+
+  .md\:border-brand,
+  .md\:hover\:border-brand:hover {
+    border-color: #f6993f;
+  }
+
+  .md\:border-brand-light,
+  .md\:hover\:border-brand-light:hover {
+    border-color: #faad63;
+  }
+
+  .md\:border-brand-lighter,
+  .md\:hover\:border-brand-lighter:hover {
+    border-color: #fcd9b6;
+  }
+
+  .md\:border-brand-lightest,
+  .md\:hover\:border-brand-lightest:hover {
+    border-color: #fff5eb;
   }
 
   .md\:border-dashed {
@@ -9756,6 +10030,14 @@ button,
     font-size: 3rem;
   }
 
+  .lg\:text-6xl {
+    font-size: 4rem;
+  }
+
+  .lg\:text-7xl {
+    font-size: 5.25rem;
+  }
+
   .lg\:font-hairline,
   .lg\:hover\:font-hairline:hover {
     font-weight: 100;
@@ -9802,7 +10084,7 @@ button,
   }
 
   .lg\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   }
 
   .lg\:font-serif {
@@ -10176,6 +10458,41 @@ button,
   .lg\:text-pink-lightest,
   .lg\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .lg\:text-brand-darkest,
+  .lg\:hover\:text-brand-darkest:hover {
+    color: #542605;
+  }
+
+  .lg\:text-brand-darker,
+  .lg\:hover\:text-brand-darker:hover {
+    color: #7f4012;
+  }
+
+  .lg\:text-brand-dark,
+  .lg\:hover\:text-brand-dark:hover {
+    color: #de751f;
+  }
+
+  .lg\:text-brand,
+  .lg\:hover\:text-brand:hover {
+    color: #f6993f;
+  }
+
+  .lg\:text-brand-light,
+  .lg\:hover\:text-brand-light:hover {
+    color: #faad63;
+  }
+
+  .lg\:text-brand-lighter,
+  .lg\:hover\:text-brand-lighter:hover {
+    color: #fcd9b6;
+  }
+
+  .lg\:text-brand-lightest,
+  .lg\:hover\:text-brand-lightest:hover {
+    color: #fff5eb;
   }
 
   .lg\:leading-none {
@@ -10702,6 +11019,41 @@ button,
     background-color: #ffebef;
   }
 
+  .lg\:bg-brand-darkest,
+  .lg\:hover\:bg-brand-darkest:hover {
+    background-color: #542605;
+  }
+
+  .lg\:bg-brand-darker,
+  .lg\:hover\:bg-brand-darker:hover {
+    background-color: #7f4012;
+  }
+
+  .lg\:bg-brand-dark,
+  .lg\:hover\:bg-brand-dark:hover {
+    background-color: #de751f;
+  }
+
+  .lg\:bg-brand,
+  .lg\:hover\:bg-brand:hover {
+    background-color: #f6993f;
+  }
+
+  .lg\:bg-brand-light,
+  .lg\:hover\:bg-brand-light:hover {
+    background-color: #faad63;
+  }
+
+  .lg\:bg-brand-lighter,
+  .lg\:hover\:bg-brand-lighter:hover {
+    background-color: #fcd9b6;
+  }
+
+  .lg\:bg-brand-lightest,
+  .lg\:hover\:bg-brand-lightest:hover {
+    background-color: #fff5eb;
+  }
+
   .lg\:bg-bottom {
     background-position: bottom;
   }
@@ -10852,26 +11204,6 @@ button,
 
   .lg\:border-l-8 {
     border-left: 8px solid #dae4e9;
-  }
-
-  .lg\:border-12 {
-    border: 12px solid #dae4e9;
-  }
-
-  .lg\:border-t-12 {
-    border-top: 12px solid #dae4e9;
-  }
-
-  .lg\:border-r-12 {
-    border-right: 12px solid #dae4e9;
-  }
-
-  .lg\:border-b-12 {
-    border-bottom: 12px solid #dae4e9;
-  }
-
-  .lg\:border-l-12 {
-    border-left: 12px solid #dae4e9;
   }
 
   .lg\:border-transparent,
@@ -11237,6 +11569,41 @@ button,
   .lg\:border-pink-lightest,
   .lg\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .lg\:border-brand-darkest,
+  .lg\:hover\:border-brand-darkest:hover {
+    border-color: #542605;
+  }
+
+  .lg\:border-brand-darker,
+  .lg\:hover\:border-brand-darker:hover {
+    border-color: #7f4012;
+  }
+
+  .lg\:border-brand-dark,
+  .lg\:hover\:border-brand-dark:hover {
+    border-color: #de751f;
+  }
+
+  .lg\:border-brand,
+  .lg\:hover\:border-brand:hover {
+    border-color: #f6993f;
+  }
+
+  .lg\:border-brand-light,
+  .lg\:hover\:border-brand-light:hover {
+    border-color: #faad63;
+  }
+
+  .lg\:border-brand-lighter,
+  .lg\:hover\:border-brand-lighter:hover {
+    border-color: #fcd9b6;
+  }
+
+  .lg\:border-brand-lightest,
+  .lg\:hover\:border-brand-lightest:hover {
+    border-color: #fff5eb;
   }
 
   .lg\:border-dashed {
@@ -12807,6 +13174,14 @@ button,
     font-size: 3rem;
   }
 
+  .xl\:text-6xl {
+    font-size: 4rem;
+  }
+
+  .xl\:text-7xl {
+    font-size: 5.25rem;
+  }
+
   .xl\:font-hairline,
   .xl\:hover\:font-hairline:hover {
     font-weight: 100;
@@ -12853,7 +13228,7 @@ button,
   }
 
   .xl\:font-sans {
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue;
   }
 
   .xl\:font-serif {
@@ -13227,6 +13602,41 @@ button,
   .xl\:text-pink-lightest,
   .xl\:hover\:text-pink-lightest:hover {
     color: #ffebef;
+  }
+
+  .xl\:text-brand-darkest,
+  .xl\:hover\:text-brand-darkest:hover {
+    color: #542605;
+  }
+
+  .xl\:text-brand-darker,
+  .xl\:hover\:text-brand-darker:hover {
+    color: #7f4012;
+  }
+
+  .xl\:text-brand-dark,
+  .xl\:hover\:text-brand-dark:hover {
+    color: #de751f;
+  }
+
+  .xl\:text-brand,
+  .xl\:hover\:text-brand:hover {
+    color: #f6993f;
+  }
+
+  .xl\:text-brand-light,
+  .xl\:hover\:text-brand-light:hover {
+    color: #faad63;
+  }
+
+  .xl\:text-brand-lighter,
+  .xl\:hover\:text-brand-lighter:hover {
+    color: #fcd9b6;
+  }
+
+  .xl\:text-brand-lightest,
+  .xl\:hover\:text-brand-lightest:hover {
+    color: #fff5eb;
   }
 
   .xl\:leading-none {
@@ -13753,6 +14163,41 @@ button,
     background-color: #ffebef;
   }
 
+  .xl\:bg-brand-darkest,
+  .xl\:hover\:bg-brand-darkest:hover {
+    background-color: #542605;
+  }
+
+  .xl\:bg-brand-darker,
+  .xl\:hover\:bg-brand-darker:hover {
+    background-color: #7f4012;
+  }
+
+  .xl\:bg-brand-dark,
+  .xl\:hover\:bg-brand-dark:hover {
+    background-color: #de751f;
+  }
+
+  .xl\:bg-brand,
+  .xl\:hover\:bg-brand:hover {
+    background-color: #f6993f;
+  }
+
+  .xl\:bg-brand-light,
+  .xl\:hover\:bg-brand-light:hover {
+    background-color: #faad63;
+  }
+
+  .xl\:bg-brand-lighter,
+  .xl\:hover\:bg-brand-lighter:hover {
+    background-color: #fcd9b6;
+  }
+
+  .xl\:bg-brand-lightest,
+  .xl\:hover\:bg-brand-lightest:hover {
+    background-color: #fff5eb;
+  }
+
   .xl\:bg-bottom {
     background-position: bottom;
   }
@@ -13903,26 +14348,6 @@ button,
 
   .xl\:border-l-8 {
     border-left: 8px solid #dae4e9;
-  }
-
-  .xl\:border-12 {
-    border: 12px solid #dae4e9;
-  }
-
-  .xl\:border-t-12 {
-    border-top: 12px solid #dae4e9;
-  }
-
-  .xl\:border-r-12 {
-    border-right: 12px solid #dae4e9;
-  }
-
-  .xl\:border-b-12 {
-    border-bottom: 12px solid #dae4e9;
-  }
-
-  .xl\:border-l-12 {
-    border-left: 12px solid #dae4e9;
   }
 
   .xl\:border-transparent,
@@ -14288,6 +14713,41 @@ button,
   .xl\:border-pink-lightest,
   .xl\:hover\:border-pink-lightest:hover {
     border-color: #ffebef;
+  }
+
+  .xl\:border-brand-darkest,
+  .xl\:hover\:border-brand-darkest:hover {
+    border-color: #542605;
+  }
+
+  .xl\:border-brand-darker,
+  .xl\:hover\:border-brand-darker:hover {
+    border-color: #7f4012;
+  }
+
+  .xl\:border-brand-dark,
+  .xl\:hover\:border-brand-dark:hover {
+    border-color: #de751f;
+  }
+
+  .xl\:border-brand,
+  .xl\:hover\:border-brand:hover {
+    border-color: #f6993f;
+  }
+
+  .xl\:border-brand-light,
+  .xl\:hover\:border-brand-light:hover {
+    border-color: #faad63;
+  }
+
+  .xl\:border-brand-lighter,
+  .xl\:hover\:border-brand-lighter:hover {
+    border-color: #fcd9b6;
+  }
+
+  .xl\:border-brand-lightest,
+  .xl\:hover\:border-brand-lightest:hover {
+    border-color: #fff5eb;
   }
 
   .xl\:border-dashed {

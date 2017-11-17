@@ -30,6 +30,7 @@
     </script>
     @stack('header_scripts')
 </head>
+
 <body class="bg-grey-lighter h-screen font-sans">
 <div id="app">
     @include('_includes.navigation')
