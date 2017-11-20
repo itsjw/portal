@@ -52,6 +52,7 @@
 <!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}"></script>
 <script src="{{ mix('js/app.js') }}"></script>
+<script type="text/javascript" src="https://app.codesponsor.io/scripts/XqWHqOU6k8dW1JE5Ax3_1Q?theme=light"></script>
 @stack('scripts')
 @if(env('APP_ENV') == 'production')
     <script>

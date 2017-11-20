@@ -45,6 +45,7 @@
                     </ul>
                 </aside>
 
+                    <div id="code-sponsor-widget"></div>
             </div>
 
             <div class="column column is-9">
