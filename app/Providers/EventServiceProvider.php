@@ -2,8 +2,8 @@
 
 namespace App\Providers;
 
-use Illuminate\Support\Facades\Event;
 use Illuminate\Foundation\Support\Providers\EventServiceProvider as ServiceProvider;
+use Illuminate\Support\Facades\Event;
 
 class EventServiceProvider extends ServiceProvider
 {
@@ -23,7 +23,7 @@ class EventServiceProvider extends ServiceProvider
 
         'App\Events\Forums\ThreadReceivedNewReply' => [
             'App\Listeners\Forums\NotifyMentionedUsers',
-            'App\Listeners\Forums\NotifySubscribers'
+            'App\Listeners\Forums\NotifySubscribers',
         ],
     ];
 

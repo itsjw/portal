@@ -2,15 +2,15 @@
 
 namespace App\Http\Controllers\Web\Forums;
 
-use App\Models\Reply;
 use App\Http\Controllers\Controller;
+use App\Models\Reply;
 
 class FavoritesController extends Controller
 {
     /**
      * Store a new favorite in the database.
      *
-     * @param  Reply $reply
+     * @param Reply $reply
      */
     public function store(Reply $reply)
     {

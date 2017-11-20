@@ -2,18 +2,13 @@
 
 namespace App\Providers;
 
-use App\Repositories\SubscriptionTokenRepository;
-use Illuminate\Contracts\Hashing\Hasher;
-use Illuminate\Database\ConnectionInterface;
 use App\Models\Channel;
 use App\Models\User;
 use App\Observers\UserObserver;
-use App\Repositories\VerifiedTokenRepository;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
-use Laravel\Dusk\DuskServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
 {

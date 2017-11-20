@@ -53,16 +53,16 @@ class Kernel extends HttpKernel
      * @var array
      */
     protected $routeMiddleware = [
-        'auth' => \Illuminate\Auth\Middleware\Authenticate::class,
-        'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'bindings' => \Illuminate\Routing\Middleware\SubstituteBindings::class,
-        'can' => \Illuminate\Auth\Middleware\Authorize::class,
-        'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
-        'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
+        'auth'           => \Illuminate\Auth\Middleware\Authenticate::class,
+        'auth.basic'     => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
+        'bindings'       => \Illuminate\Routing\Middleware\SubstituteBindings::class,
+        'can'            => \Illuminate\Auth\Middleware\Authorize::class,
+        'guest'          => \App\Http\Middleware\RedirectIfAuthenticated::class,
+        'throttle'       => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'optimizeImages' => \Spatie\LaravelImageOptimizer\Middlewares\OptimizeImages::class,
-        'scopes' => \Laravel\Passport\Http\Middleware\CheckScopes::class,
-        'scope' => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
+        'scopes'         => \Laravel\Passport\Http\Middleware\CheckScopes::class,
+        'scope'          => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         //'must-be-confirmed' => \App\Http\Middleware\RedirectIfEmailNotConfirmed::class,
-        'admin' => \App\Http\Middleware\Administrator::class
+        'admin' => \App\Http\Middleware\Administrator::class,
     ];
 }

@@ -5,7 +5,6 @@ namespace App\Listeners\Forums;
 use App\Events\Forums\ThreadReceivedNewReply;
 use App\Models\User;
 use App\Notifications\Forums\YouWereMentioned;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NotifyMentionedUsers implements ShouldQueue
@@ -23,7 +22,8 @@ class NotifyMentionedUsers implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  ThreadReceivedNewReply $event
+     * @param ThreadReceivedNewReply $event
+     *
      * @return void
      */
     public function handle(ThreadReceivedNewReply $event)

@@ -3,13 +3,11 @@
 namespace App\Traits;
 
 use App\Models\Favorite;
-use Illuminate\Database\Eloquent\Model;
 
 trait Favoritable
 {
-
     /**
-     *  Boot Trait
+     *  Boot Trait.
      */
     protected static function bootFavoritable()
     {
@@ -33,14 +31,11 @@ trait Favoritable
     {
         $attributes = ['user_id' => auth()->id()];
 
-        if (! $this->favorites()->where($attributes)->exists()) {
+        if (!$this->favorites()->where($attributes)->exists()) {
             return $this->favorites()->create($attributes);
         }
     }
 
-    /**
-     *
-     */
     public function unfavorite()
     {
         $attributes = ['user_id' => auth()->id()];
@@ -52,7 +47,7 @@ trait Favoritable
      */
     public function isFavorited()
     {
-        return ! ! $this->favorites->where('user_id', auth()->id())->count();
+        return (bool) $this->favorites->where('user_id', auth()->id())->count();
     }
 
     /**

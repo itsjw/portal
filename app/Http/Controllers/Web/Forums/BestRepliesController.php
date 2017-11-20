@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Web\Forums;
 
-use App\Models\Reply;
 use App\Http\Controllers\Controller;
+use App\Models\Reply;
 
 class BestRepliesController extends Controller
 {
     /**
      * Mark the best reply for a thread.
      *
-     * @param  Reply $reply
+     * @param Reply $reply
+     *
      * @throws \Illuminate\Auth\Access\AuthorizationException
      */
     public function store(Reply $reply)
@@ -20,4 +21,3 @@ class BestRepliesController extends Controller
         $reply->thread->markBestReply($reply);
     }
 }
-

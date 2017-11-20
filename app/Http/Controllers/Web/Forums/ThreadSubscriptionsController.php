@@ -2,8 +2,8 @@
 
 namespace App\Http\Controllers\Web\Forums;
 
-use App\Models\Thread;
 use App\Http\Controllers\Controller;
+use App\Models\Thread;
 
 class ThreadSubscriptionsController extends Controller
 {

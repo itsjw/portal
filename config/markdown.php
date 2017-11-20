@@ -42,7 +42,7 @@ return [
     */
 
     'extensions' => [
-        'AltThree\Emoji\EmojiExtension'
+        'AltThree\Emoji\EmojiExtension',
     ],
 
     /*

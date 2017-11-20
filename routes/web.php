@@ -1,7 +1,5 @@
 <?php
 
-use Spatie\Browsershot\Browsershot;
-
 
 Route::get('/', 'Web\SiteController@getMap');
 
@@ -9,7 +7,7 @@ Auth::routes();
 Route::get('/auth/social/github', 'Auth\SocialController@redirectToGithub');
 Route::get('/auth/social/callback/github', 'Auth\SocialController@handleGithubCallback');
 
-Route::get('/test/{id}', function($id) {
+Route::get('/test/{id}', function ($id) {
     $user = \App\Models\User::find($id);
     auth()->login($user);
 
@@ -55,8 +53,8 @@ Route::post('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@store'
 Route::delete('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@destroy');
 
 Route::get('/@{user}', 'Web\Users\ProfilesController@show')->name('profile');
-Route::get('/profiles/{username}', function($username) {
-    return redirect('/@' . $username);
+Route::get('/profiles/{username}', function ($username) {
+    return redirect('/@'.$username);
 });
 
 Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');

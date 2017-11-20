@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
 /**
- * App\Models\Thread
+ * App\Models\Thread.
  *
  * @property int $id
  * @property string|null $slug
@@ -29,6 +29,7 @@ use Laravel\Scout\Searchable;
  * @property-read bool $is_subscribed_to
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Reply[] $replies
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ThreadSubscription[] $subscriptions
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread filter(\App\Filters\ThreadFilters $filters)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereBestReplyId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereBody($value)
@@ -67,11 +68,11 @@ class Thread extends Model
      * @var array
      */
     protected $casts = [
-        'locked' => 'boolean'
+        'locked' => 'boolean',
     ];
 
     /**
-     *  Boot Model
+     *  Boot Model.
      */
     protected static function boot()
     {
@@ -134,13 +135,15 @@ class Thread extends Model
 
     /**
      * @param null $userId
+     *
      * @return $this
      */
     public function subscribe($userId = null)
     {
         $this->subscriptions()->create([
-            'user_id' => $userId ?: auth()->id()
+            'user_id' => $userId ?: auth()->id(),
         ]);
+
         return $this;
     }
 
@@ -174,6 +177,7 @@ class Thread extends Model
 
     /**
      * @param $user
+     *
      * @return bool
      */
     public function hasUpdatesFor($user)

@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Activity
+ * App\Models\Activity.
  *
  * @property int $id
  * @property int $user_id
@@ -15,6 +15,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $subject
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Activity whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Activity whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Activity whereSubjectId($value)
@@ -42,6 +43,7 @@ class Activity extends Model
     /**
      * @param $user
      * @param int $take
+     *
      * @return mixed
      */
     public static function feed($user, $take = 50)

@@ -25,7 +25,7 @@ class HorizonServiceProvider extends ServiceProvider
 
             $admin = auth()->user();
 
-            if (! $admin->is_admin) {
+            if (!$admin->is_admin) {
                 return false;
             }
 
