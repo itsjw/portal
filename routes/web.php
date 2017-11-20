@@ -1,14 +1,19 @@
 <?php
 
+use Spatie\Browsershot\Browsershot;
+
+
 Route::get('/', 'Web\SiteController@getMap');
 
 Auth::routes();
 Route::get('/auth/social/github', 'Auth\SocialController@redirectToGithub');
 Route::get('/auth/social/callback/github', 'Auth\SocialController@handleGithubCallback');
 
-Route::get('/test/{id}', function ($id) {
+Route::get('/test/{id}', function($id) {
     $user = \App\Models\User::find($id);
     auth()->login($user);
+
+    back();
 });
 
 Route::get('/confirm/{token}', function ($token) {
@@ -25,13 +30,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/public-api/users', 'Api\Users\UserController@index');
 
-
-
 /*
  * Forum Routes
  */
 Route::get('threads', 'Web\Forums\ThreadsController@index')->name('threads');
 Route::get('threads/create', 'Web\Forums\ThreadsController@create');
+Route::post('threads/search', 'Web\Forums\SearchController@show');
 Route::get('threads/search', 'Web\Forums\SearchController@show');
 Route::get('threads/{channel}/{thread}', 'Web\Forums\ThreadsController@show');
 Route::patch('threads/{channel}/{thread}', 'Web\Forums\ThreadsController@update');
@@ -57,11 +61,9 @@ Route::get('/profiles/{username}', function($username) {
 
 Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
 Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');
-Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
+/*
+ * Link Routes
+ */
+Route::resource('links', 'Web\Links\LinkController');
+Route::resource('link-categories', 'Web\Links\LinkCategoryController');

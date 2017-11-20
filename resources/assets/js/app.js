@@ -7,6 +7,8 @@
 
 require('./bootstrap');
 
+require('./extra/bulma');
+
 require('./global_components');
 
 /**
@@ -19,28 +21,19 @@ Vue.component('flash', require('./components/Flash.vue'));
 Vue.component('paginator', require('./components/Paginator.vue'));
 Vue.component('user-notifications', require('./components/UserNotifications.vue'));
 Vue.component('avatar-form', require('./components/AvatarForm.vue'));
-
 Vue.component('thread-view', require('./pages/Thread.vue'));
+Vue.component('php-map', require('./components/PHPMap.vue'));
 
-//Vue.component('google-map', require('./components/Map.vue'));
-//Vue.component('small-map', require('./components/SmallMap.vue'));
+Vue.component('passport-clients', require('./components/passport/Clients.vue'));
+Vue.component('passport-authorized-clients', require('./components/passport/AuthorizedClients.vue'));
+Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
-Vue.component(
-    'passport-clients',
-    require('./components/passport/Clients.vue')
-);
+import InstantSearch from 'vue-instantsearch';
+Vue.use(InstantSearch);
 
-Vue.component(
-    'passport-authorized-clients',
-    require('./components/passport/AuthorizedClients.vue')
-);
-
-Vue.component(
-    'passport-personal-access-tokens',
-    require('./components/passport/PersonalAccessTokens.vue')
-);
-
-
+import VueMarkdown from 'vue-markdown';
+Vue.use(VueMarkdown);
+Vue.component('vue-markdown', VueMarkdown);
 
 const app = new Vue({
     el: '#app'

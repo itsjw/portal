@@ -1,7 +1,6 @@
 <template>
-    <div class="alert alert-flash"
-         :class="'alert-'+level"
-         role="alert"
+    <div class="notification"
+         :class="level"
          v-show="show"
          v-text="body">
     </div>
@@ -30,7 +29,7 @@
         },
 
         methods: {
-            flash(data) {
+            flash: function (data) {
                 if (data) {
                     this.body = data.message;
                     this.level = data.level;
@@ -41,7 +40,7 @@
                 this.hide();
             },
 
-            hide() {
+            hide: function () {
                 setTimeout(() => {
                     this.show = false;
                 }, 3000);

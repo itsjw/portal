@@ -11,23 +11,20 @@
 @endpush
 
 @section('content')
-    <div class="flex items-center">
-        <div class="md:w-1/2 md:mx-auto">
-            <div class="rounded shadow">
-                <div class="font-medium text-lg text-brand-darker bg-brand-lighter p-3 rounded rounded-t">
-                    Dashboard
-                </div>
-                <div class="bg-white p-3 rounded rounded-b">
-                    @if (session('status'))
-                        <div class="bg-green-lightest border border-green-light text-green-dark text-sm px-4 py-3 rounded mb-4">
-                            {{ session('status') }}
-                        </div>
-                    @endif
+    <div class="container">
+        <div class="columns is- is-marginless is-centered">
+            <div class="column">
+                <nav class="card">
+                    <header class="card-header">
+                        <p class="card-header-title">
+                            Dashboard
+                        </p>
+                    </header>
 
-                    <p class="text-grey-dark text-sm">
+                    <div class="card-content">
                         You are logged in!
-                    </p>
-                </div>
+                    </div>
+                </nav>
             </div>
         </div>
     </div>

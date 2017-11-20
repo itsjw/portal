@@ -1,5 +1,5 @@
 let mix = require('laravel-mix');
-var tailwindcss = require('tailwindcss');
+let webpack = require('webpack');
 
 /*
  |--------------------------------------------------------------------------
@@ -13,21 +13,41 @@ var tailwindcss = require('tailwindcss');
  */
 
 mix.js('resources/assets/js/app.js', 'public/js')
-   .postCss('resources/assets/css/main.css', 'public/css', [
-        tailwindcss('tailwind.js'),
-   ]);
+    .sass('resources/assets/sass/app.scss', 'public/css')
+    .sourceMaps()
+    .version();
 
-// If you want to use LESS for your preprocessing
-// mix.less('resources/assets/less/main.less', 'public/css')
-//   .options({
-//     postCss: [
-//       tailwindcss('./tailwind.js'),
-//     ]
-//   })
-
-// If you want to use SASS for preprocessing
-// mix.sass('resources/assets/sass/app.scss', 'public/css')
-//    .options({
-//       processCssUrls: false,
-//       postCss: [ tailwindcss('tailwind.js') ],
-//    });
+mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.(gif|png|jpe?g|svg)$/i,
+                exclude: /node_modules(?!\/foundation-sites)|bower_components/,
+                loaders: [
+                    'file-loader', {
+                        loader: 'image-webpack-loader',
+                        options: {
+                            gifsicle: {
+                                interlaced: false,
+                            },
+                            optipng: {
+                                optimizationLevel: 7,
+                            },
+                            pngquant: {
+                                quality: '65-90',
+                                speed: 4
+                            },
+                            mozjpeg: {
+                                progressive: true,
+                                quality: 65
+                            },
+                            webp: {
+                                quality: 75
+                            }
+                        }
+                    }
+                ]
+            }
+        ]
+    }
+});

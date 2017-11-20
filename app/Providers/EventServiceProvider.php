@@ -25,8 +25,6 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\Forums\NotifyMentionedUsers',
             'App\Listeners\Forums\NotifySubscribers'
         ],
-
-
     ];
 
     /**

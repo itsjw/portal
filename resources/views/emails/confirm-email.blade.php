@@ -1,12 +1,9 @@
-@component('mail::message')
-    # Welcome to {{ config('app.name') }}!
+<h1>Welcome to {{ config('app.name') }}!</h1>
 
-    Please Confirm Your email:
+Please Confirm Your email:
 
-    @component('mail::button', ['url' => url('/confirm/' . $user->confirmation_token)])
-        Confirm
-    @endcomponent
+<a href="{{ url('/confirm/' . $user->confirmation_token) }}">Confirm</a>
 
-    Thanks,<br>
-    {{ config('app.name') }}
-@endcomponent
+<br><br>
+Thanks,<br>
+{{ config('app.name') }}

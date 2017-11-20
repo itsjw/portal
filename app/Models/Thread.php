@@ -8,6 +8,42 @@ use App\Traits\RecordsActivity;
 use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
+/**
+ * App\Models\Thread
+ *
+ * @property int $id
+ * @property string|null $slug
+ * @property int $user_id
+ * @property int $channel_id
+ * @property int $replies_count
+ * @property int $visits
+ * @property string $title
+ * @property string $body
+ * @property int|null $best_reply_id
+ * @property bool $locked
+ * @property \Carbon\Carbon|null $created_at
+ * @property \Carbon\Carbon|null $updated_at
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Activity[] $activity
+ * @property-read \App\Models\Channel $channel
+ * @property-read \App\Models\User $creator
+ * @property-read bool $is_subscribed_to
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Reply[] $replies
+ * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\ThreadSubscription[] $subscriptions
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread filter(\App\Filters\ThreadFilters $filters)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereBestReplyId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereBody($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereChannelId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereCreatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereLocked($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereRepliesCount($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereSlug($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereTitle($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereUpdatedAt($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereUserId($value)
+ * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Thread whereVisits($value)
+ * @mixin \Eloquent
+ */
 class Thread extends Model
 {
     use Searchable, RecordsActivity;

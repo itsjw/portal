@@ -1,5 +1,5 @@
 <template>
-    <div id="map" :class="{loaded: mapLoaded}"></div>
+    <div class="map-holder" id="map" :class="{loaded: mapLoaded}"></div>
 </template>
 
 <script>
@@ -25,7 +25,7 @@
         },
 
         methods: {
-            mapInit() {
+            mapInit: function () {
                 var properties = this.loadMapProperties();
                 var mapOptions = {
                     zoom: properties.zoom,
@@ -35,7 +35,7 @@
                 this.map = new google.maps.Map(document.querySelector('#map'), mapOptions);
                 this.createMap();
                 google.maps.event.addListener(this.map, 'idle', () => {
-                    $('footer').css('margin-top', ($('#map').height() - 160)+ 'px');
+                    $('footer').css('margin-top', ($('#map').height() - 160) + 'px');
                 });
                 google.maps.event.addListener(this.map, 'dragend', () => {
                     this.storeMapProperties();
@@ -45,7 +45,7 @@
                 });
             },
 
-            createMap() {
+            createMap: function () {
                 axios.get('/public-api/users').then(response => {
                     this.users = response.data.data;
                     var all = response.data.data;
@@ -70,10 +70,10 @@
                         var position;
                         var randomness = 0.01;
 
-                        while(true && usr.geo.lat > 0 && usr.geo.lon > 0) {
+                        while (true && usr.geo.lat > 0 && usr.geo.lon > 0) {
                             position = usr.geo.lat + "-" + usr.geo.lng;
 
-                            if(positions.indexOf(position) !== -1) {
+                            if (positions.indexOf(position) !== -1) {
                                 usr.geo.lat += (Math.random() - 0.5) * randomness;
                                 usr.geo.lon += (Math.random() - 0.5) * randomness;
                             } else {
@@ -83,7 +83,7 @@
 
                         positions.push(position);
 
-                        var html = '<div class="profile"><img class="img img-circle" src="' + usr.avatar + '" alt="">&nbsp;<a href="/@'+ usr.username +'">' + usr.username + '</a></div>';
+                        var html = '<div class="profile"><img class="img img-circle" src="' + usr.avatar + '" alt="">&nbsp;<a href="/@' + usr.username + '">' + usr.username + '</a></div>';
                         var userLatLng = new google.maps.LatLng(usr.geo.lat, usr.geo.lon);
 
                         var marker = new google.maps.Marker({
@@ -94,7 +94,7 @@
                         var infoBox = null;
 
                         google.maps.event.addListener(marker, 'click', function (evt) {
-                            if(infoBox === null) {
+                            if (infoBox === null) {
                                 infoBox = new InfoBox({
                                     latlng: this.getPosition(),
                                     map: this.map,
@@ -120,18 +120,18 @@
                     this.mapLoaded = true;
 
                     // Add the usergroups
-                    if(this.usergroups.length > 0) {
+                    if (this.usergroups.length > 0) {
                         this.addUserGroupsToMap();
                     }
                 });
             },
 
-            loadMapProperties() {
+            loadMapProperties: function () {
                 var properties = JSON.parse(localStorage.getItem('HomeMap.properties'));
-                return properties ? properties : { lat: 51.165691, lng: 10.451526, zoom: 3 };
+                return properties ? properties : {lat: 51.165691, lng: 10.451526, zoom: 3};
             },
 
-            storeMapProperties() {
+            storeMapProperties: function () {
                 localStorage.setItem('HomeMap.properties', JSON.stringify({
                     lat: this.map.getCenter().lat(),
                     lng: this.map.getCenter().lng(),
@@ -139,7 +139,7 @@
                 }));
             },
 
-            addUserGroupsToMap() {
+            addUserGroupsToMap: function () {
                 this.usergroups.forEach((usergroup) => {
                     let latLng = new google.maps.LatLng(usergroup.latitude, usergroup.longitude);
 
@@ -157,7 +157,7 @@
                     let infoBox = null;
                     var tags = "";
 
-                    if(usergroup.tags) {
+                    if (usergroup.tags) {
                         tags = '<div class="tags">';
                         usergroup.tags.forEach((tag) => {
                             tags += '<span>' + tag.name + '</span>';
@@ -188,11 +188,11 @@
                 });
             },
 
-            loadUserGroups() {
+            loadUserGroups: function () {
                 let result = this.allusergroups;
-                if(typeof result.groups != 'undefined') {
+                if (typeof result.groups != 'undefined') {
                     this.usergroups = result.groups;
-                    if(this.markerClusterer !== null) {
+                    if (this.markerClusterer !== null) {
                         this.addUserGroupsToMap();
                     }
                 }
@@ -202,6 +202,13 @@
 </script>
 
 <style>
+    .map-holder {
+        padding: 0 0 0 0 !important;
+        width: 100% !important;
+        height: 530px !important;
+        top: 54px !important;
+    }
+
     #map {
         opacity: 0;
         width: 100%;
@@ -210,6 +217,7 @@
         left: 0;
         top: 0;
         transition: opacity .2s;
+        padding: 0 0 0 0 !important;
     }
 
     #map.loaded {

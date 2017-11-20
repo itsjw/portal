@@ -1,16 +1,17 @@
 <template>
-    <li class="nav-item dropdown" v-if="notifications.length">
-        <a href="#" class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown"
-           aria-haspopup="true" aria-expanded="false">Notifications</a>
-        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+    <div class="navbar-item has-dropdown is-hoverable" v-if="notifications.length">
+        <a class="navbar-link" href="#">
+            Notifications
+        </a>
+        <div class="navbar-dropdown is-boxed">
             <a v-for="notification in notifications"
                :href="notification.data.link"
                v-text="notification.data.message"
                @click="markAsRead(notification)"
-               class="dropdown-item"
+               class="navbar-item"
             ></a>
         </div>
-    </li>
+    </div>
 </template>
 
 <script>
@@ -25,7 +26,7 @@
         },
 
         methods: {
-            markAsRead(notification) {
+            markAsRead: function (notification) {
                 axios.delete('/profiles/' + window.App.user.name + '/notifications/' + notification.id)
             }
         }

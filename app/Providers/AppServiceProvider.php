@@ -2,9 +2,13 @@
 
 namespace App\Providers;
 
+use App\Repositories\SubscriptionTokenRepository;
+use Illuminate\Contracts\Hashing\Hasher;
+use Illuminate\Database\ConnectionInterface;
 use App\Models\Channel;
 use App\Models\User;
 use App\Observers\UserObserver;
+use App\Repositories\VerifiedTokenRepository;
 use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Support\Facades\View;
@@ -24,8 +28,9 @@ class AppServiceProvider extends ServiceProvider
 
         View::composer('*', function ($view) {
             $channels = Cache::rememberForever('channels', function () {
-                return Channel::all();
+                return Channel::orderBy('name')->get();
             });
+
             $view->with('channels', $channels);
         });
 
@@ -40,7 +45,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         if ($this->app->environment('local')) {
-            $this->app->register('Laravel\Dusk\DuskServiceProvider');
+            $this->app->register('\Laravel\Dusk\DuskServiceProvider');
+            $this->app->register('\Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider');
+            $this->app->register('\Barryvdh\Debugbar\ServiceProvider');
         }
     }
 }

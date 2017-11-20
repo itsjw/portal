@@ -11,13 +11,20 @@
     <title>@yield('page_title') - {{ config('app.name', 'phpmap.co') }}</title>
 
     <!-- Styles -->
-    <link rel="stylesheet" href="https://use.typekit.net/iqy1okj.css">
-    <link href="{{ mix('css/main.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.4/dist/instantsearch.min.css">
     @stack('styles')
     <style>
-        body { padding-bottom: 100px; }
-        [v-cloak] { display: none; }
+        body {
+            padding-bottom: 100px;
+        }
+        .navbar {
+            margin-bottom: 0px;
+        }
+        [v-cloak] {
+            display: none;
+        }
     </style>
 
     <!-- Scripts -->
@@ -25,13 +32,15 @@
         window.App = {!! json_encode([
             'csrfToken' => csrf_token(),
             'user' => Auth::user(),
-            'signedIn' => Auth::check()
+            'signedIn' => Auth::check(),
+            'search_id' => env('ALGOLIA_APP_ID'),
+            'search_key' => env('ALGOLIA_SECRET')
         ]) !!};
     </script>
     @stack('header_scripts')
 </head>
 
-<body class="bg-grey-lighter h-screen font-sans">
+<body>
 <div id="app">
     @include('_includes.navigation')
 

@@ -1,8 +1,8 @@
 <template>
-    <button type="button" :class="classes" @click="toggle">
-        <span class="fa fa-heart"></span>
+    <div>
+        <span class="icon is-small" @click="toggle"><i :class="classes"></i></span>
         <span v-text="count"></span>
-    </button>
+    </div>
 </template>
 
 <script>
@@ -17,31 +17,31 @@
         },
 
         computed: {
-            classes() {
+            classes: function () {
                 return [
                     'btn',
-                    this.active ? 'btn-info' : 'btn-light'
+                    this.active ? 'fa fa-heart' : 'fa fa-heart-o'
                 ];
             },
 
-            endpoint() {
+            endpoint: function () {
                 return '/replies/' + this.reply.id + '/favorites';
             }
         },
 
         methods: {
-            toggle() {
+            toggle: function () {
                 this.active ? this.destroy() : this.create();
             },
 
-            create() {
+            create: function () {
                 axios.post(this.endpoint);
 
                 this.active = true;
                 this.count++;
             },
 
-            destroy() {
+            destroy: function () {
                 axios.delete(this.endpoint);
 
                 this.active = false;

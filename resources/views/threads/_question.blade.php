@@ -1,54 +1,82 @@
-<div class="card" v-if="editing">
-    <div class="card-header">
-        <div class="level">
-            <input type="text" class="form-control" v-model="form.title">
+<div class="tile" v-if="editing">
+    <div class="card">
+        <div class="card-content">
+            <div class="level">
+                <input type="text" class="input" v-model="form.title">
+            </div>
+        </div>
+
+        <div class="content">
+            <div class="field">
+                <div class="control">
+                    <textarea class="textarea" rows="10" v-model="form.body"></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="card-content">
+            <button class="button is-small" @click="update">Update</button>
+            <button class="button is-small" @click="resetForm">Cancel</button>
         </div>
     </div>
+</div>
 
-    <div class="card-body">
-        <div class="form-group">
-            <textarea class="form-control" rows="10" v-model="form.body"></textarea>
+<div class="tile" v-if="! editing">
+    <div class="card">
+        <div class="card-content">
+            <div class="media">
+                <div class="media-left">
+                    <figure class="image is-48x48">
+                        <img src="{{ $thread->creator->avatar_path }}" alt="Placeholder image">
+                    </figure>
+                </div>
+                <div class="media-content">
+                    <p class="title is-4">
+                        <a href="{{ '/@' . $thread->creator->username }}">{{ $thread->creator->username }}</a> posted: <span v-text="title"></span>
+                </div>
+            </div>
         </div>
-    </div>
 
-    <div class="card-footer">
-        <div class="level">
-            <button class="btn btn-sm btn-warning level-item" @click="editing = true" v-show="! editing">Edit</button>
-            <button class="btn btn-warning btn-sm level-item" @click="update">Update</button>
-            <button class="btn btn-sm level-item btn-danger" @click="resetForm">Cancel</button>
+        <div class="card-content">
+            <vue-markdown>{{ $thread->body }}</vue-markdown>
 
             @can ('update', $thread)
-                <form action="{{ $thread->path() }}" method="POST" class="ml-a">
-                    {{ csrf_field() }}
-                    {{ method_field('DELETE') }}
+                <hr>
+                <nav class="level is-mobile">
+                    <div class="level-left">
+                        <button class="button is-small" @click="editing = true" v-show="! editing">Edit</button> &nbsp;
+                        <form action="{{ $thread->path() }}" method="POST" class="ml-a">
+                            {{ csrf_field() }}
+                            {{ method_field('DELETE') }}
 
-                    <button type="submit" class="btn btn-link">Delete Thread</button>
-                </form>
+                            <button type="submit" class="button is-small">Delete Thread</button>
+                        </form>
+                    </div>
+                </nav>
             @endcan
 
         </div>
     </div>
 </div>
 
+<div class="tile" v-else>
+    <div class="card" >
+        <div class="card-content">
+            <div class="level">
+                <img src="{{ $thread->creator->avatar_path }}" alt="{{ $thread->creator->username }}" width="30" height="30">
 
-<div class="card" v-else>
-    <div class="card-header">
-        <div class="level">
-            <img src="{{ $thread->creator->avatar_path }}"
-                 alt="{{ $thread->creator->username }}"
-                 width="30"
-                 height="30"
-                 class="mr-1 rounded-circle">
-
-            <span class="flex">
+                <span class="flex">
                 <a href="{{ '/@' . $thread->creator->username }}">{{ $thread->creator->username }}</a> posted: <span v-text="title"></span>
             </span>
+            </div>
         </div>
-    </div>
 
-    <div class="card-body" v-text="body"></div>
+        <div class="card-content">
+            <vue-markdown v-html="body"></vue-markdown>
+        </div>
 
-    <div class="card-footer" v-if="authorize('owns', thread)">
-        <button class="btn btn-sm btn-warning" @click="editing = true">Edit</button>
+        <div class="card-content" v-if="authorize('owns', thread)">
+            <button class="button" @click="editing = true">Edit</button>
+        </div>
     </div>
 </div>

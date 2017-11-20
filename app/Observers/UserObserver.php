@@ -2,6 +2,7 @@
 
 namespace App\Observers;
 
+use App\Events\Users\EmailNeedsVerification;
 use App\Mail\Users\ConfirmEmail;
 use App\Models\User;
 use Illuminate\Support\Facades\Mail;

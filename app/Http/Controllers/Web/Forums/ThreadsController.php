@@ -66,6 +66,7 @@ class ThreadsController extends Controller
             'g-recaptcha-response' => ['required', $recaptcha]
         ]);
 
+
         $thread = Thread::create([
             'user_id' => auth()->id(),
             'channel_id' => request('channel_id'),

@@ -30,6 +30,6 @@ class ConfirmEmail extends Mailable implements ShouldQueue
      */
     public function build()
     {
-        return $this->markdown('emails.confirm-email', ['user' => $this->user]);
+        return $this->view('emails.confirm-email', ['user' => $this->user]);
     }
 }

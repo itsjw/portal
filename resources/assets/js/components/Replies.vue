@@ -34,12 +34,12 @@
         },
 
         methods: {
-            fetch(page) {
+            fetch: function (page) {
                 axios.get(this.url(page)).then(this.refresh);
             },
 
-            url(page) {
-                if (! page) {
+            url: function (page) {
+                if (!page) {
                     let query = location.search.match(/page=(\d+)/);
 
                     page = query ? query[1] : 1;
@@ -48,7 +48,7 @@
                 return `${location.pathname}/replies?page=${page}`;
             },
 
-            refresh({data}) {
+            refresh: function ({data}) {
                 this.dataSet = data;
                 this.items = data.data;
 

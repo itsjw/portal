@@ -1,7 +1,9 @@
 <template>
     <div>
         <div class="level">
-            <img :src="avatar" width="50" height="50" class="mr-1 rounded-circle">
+            <figure class="image is-rounded is-128x128">
+                <img :src="avatar">
+            </figure>
 
             <h1 v-text="user.name"></h1>
         </div>

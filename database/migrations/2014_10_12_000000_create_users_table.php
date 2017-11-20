@@ -20,6 +20,7 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->timestamp('confirmed_at')->nullable();
             $table->string('confirmation_token')->nullable();
+
             $table->string('username')->unique();
             $table->string('avatar_path')->nullable();
             $table->string('profile_cover')->default('https://phpmap.co/images/profile_cover.jpg');

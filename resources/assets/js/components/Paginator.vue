@@ -38,17 +38,17 @@
         },
 
         computed: {
-            shouldPaginate() {
-                return !! this.prevUrl || !! this.nextUrl;
+            shouldPaginate: function () {
+                return !! this.prevUrl || !!this.nextUrl;
             }
         },
 
         methods: {
-            broadcast() {
+            broadcast: function () {
                 return this.$emit('changed', this.page);
             },
 
-            updateUrl() {
+            updateUrl: function () {
                 history.pushState(null, null, '?page=' + this.page);
             }
         }

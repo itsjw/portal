@@ -22,6 +22,13 @@
             <directory suffix=".php">./app</directory>
         </whitelist>
     </filter>
+    <listeners>
+        <listener class="NunoMaduro\Collision\Adapters\Phpunit\Listener" />
+    </listeners>
+    <logging>
+        <log type="coverage-html" target="public/tests/coverage"/>
+        <log type="testdox-html" target="public/tests/index.html"/>
+    </logging>
     <php>
         <env name="APP_ENV" value="testing"/>
         <env name="CACHE_DRIVER" value="array"/>

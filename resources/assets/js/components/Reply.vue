@@ -1,42 +1,62 @@
 <template>
     <div>
         <div :id="'reply-'+id" class="card">
-            <div class="card-header">
-                <div class="level">
-                    <h6 class="flex">
-                        <a :href="'/@' + reply.owner.username"
-                           v-text="reply.owner.name">
-                        </a> said <span v-text="ago"></span>
-                    </h6>
-
-                    <div v-if="signedIn">
-                        <favorite :reply="reply"></favorite>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-body">
+            <div class="card-content">
                 <div v-if="editing">
                     <form @submit="update">
-                        <div class="form-group">
-                            <textarea class="form-control" v-model="body" required></textarea>
+                        <div class="field">
+                            <div class="control">
+                                <textarea class="textarea" v-model="body" required></textarea>
+                            </div>
                         </div>
 
-                        <button class="btn btn-sm btn-primary">Update</button>
-                        <button class="btn btn-sm btn-link" @click="editing = false" type="button">Cancel</button>
+                        <button class="button is-small">Update</button>
+                        <button class="button is-small" @click="editing = false" type="button">Cancel</button>
                     </form>
                 </div>
 
-                <div v-else v-html="body"></div>
-            </div>
+                <article class="media" v-if="! editing">
+                    <figure class="media-left">
+                        <p class="image is-64x64">
+                            <img v-bind:src="reply.owner.avatar_path" v-bind:alt="reply.owner.username">
+                        </p>
+                    </figure>
 
-            <div class="card-footer level" v-if="authorize('owns', reply) || authorize('owns', reply.thread)">
-                <div v-if="authorize('owns', reply)">
-                    <button class="btn btn-sm mr-1" @click="editing = true">Edit</button>
-                    <button class="btn btn-sm btn-danger mr-1" @click="destroy">Delete</button>
-                </div>
+                    <div class="media-content">
+                        <div class="content">
+                            <a :href="'/@' + reply.owner.username"><strong>{{ reply.owner.name }}</strong></a> <small><span v-text="ago"></span></small>
+                            <br>
+                            <vue-markdown v-html="body"></vue-markdown>
+                        </div>
 
-                <button class="btn btn-sm btn-default ml-a" @click="markBestReply" v-if="authorize('owns', reply.thread)">Best Reply?</button>
+                        <nav class="level is-mobile">
+                            <div class="level-left">
+                                <a class="level-item" v-if="authorize('owns', reply) || authorize('owns', reply.thread)" @click="destroy">
+                                    <div v-if="authorize('owns', reply)">
+                                        <span class="icon is-small"><i class="fa fa-trash"></i></span>
+                                    </div>
+                                </a>
+
+                                <a class="level-item" v-if="authorize('owns', reply) || authorize('owns', reply.thread)" @click="editing = true">
+                                   <div v-if="authorize('owns', reply)">
+                                       <span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span>
+                                   </div>
+                                </a>
+
+                                <a class="level-item" v-if="signedIn">
+                                    <favorite :reply="reply"></favorite>
+                                </a>
+                            </div>
+                        </nav>
+
+                    </div>
+
+                    <div class="media-right">
+                        <a @click="markBestReply" v-if="authorize('owns', reply.thread)">
+                            <span class="icon is-small"><i class="fa fa-star-o"></i></span>
+                        </a>
+                    </div>
+                </article>
             </div>
         </div>
         <br>
@@ -62,7 +82,7 @@
         },
 
         computed: {
-            ago() {
+            ago: function () {
                 return moment(this.reply.created_at).fromNow() + '...';
             }
         },
@@ -74,7 +94,7 @@
         },
 
         methods: {
-            update() {
+            update: function () {
                 axios.patch(
                     '/replies/' + this.id, {
                         body: this.body
@@ -88,13 +108,13 @@
                 flash('Updated!');
             },
 
-            destroy() {
+            destroy: function () {
                 axios.delete('/replies/' + this.id);
 
                 this.$emit('deleted', this.id);
             },
 
-            markBestReply() {
+            markBestReply: function () {
                 axios.post('/replies/' + this.id + '/best');
 
                 window.events.$emit('best-reply-selected', this.id);

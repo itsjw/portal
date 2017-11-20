@@ -8,17 +8,17 @@
 
         computed: {
             classes() {
-                return ['btn', this.active ? 'btn-info' : 'btn-light'];
+                return ['btn', this.active ? 'button is-small is-info is-outlined' : 'button is-small is-outlined'];
             }
         },
 
         methods: {
-            subscribe() {
+            subscribe: function () {
                 axios[
                     (this.active ? 'delete' : 'post')
-                ](location.pathname + '/subscriptions');
+                    ](location.pathname + '/subscriptions');
 
-                this.active = ! this.active;
+                this.active = !this.active;
             }
         }
     }

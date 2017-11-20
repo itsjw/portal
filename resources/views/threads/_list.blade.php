@@ -1,44 +1,26 @@
+<div class="box content">
 @forelse ($threads as $thread)
-    <div class="col-md-4 forums-card">
-        <div class="card">
-            <img class="card-img-top" src="https://phpmap.co/images/bg-banner.jpg">
-            <div class="card-block">
-                <figure class="profile">
-                    <img src="{{ $thread->creator->avatar_path }}" class="profile-avatar" alt="{{ $thread->creator->username }}">
-                </figure>
-                <h4 class="card-title mt-3">
-                    <a href="{{ $thread->path() }}">
-                        @if (auth()->check() && $thread->hasUpdatesFor(auth()->user()))
-                            <strong>
-                                {{ $thread->title }}
-                            </strong>
-                        @else
-                            {{ $thread->title }}
-                        @endif
-                    </a>
-                </h4>
-                <div class="meta">
-                    <a>Friends</a>
-                </div>
-                <div class="card-text">
-                    {{ str_limit($thread->body, '150') }}
-                </div>
+    <article class="post">
+        <h4><a href="/threads/{{ $thread->channel->slug }}/{{ $thread->slug }}">{{ $thread->title }}</a></h4>
+        <span class="pull-right has-text-grey-light"><i class="fa fa-comments"></i> {{ $thread->replies_count }}</span>
+        <div class="media">
+            <div class="media-left">
+                <p class="image is-32x32">
+                    <img src="{{ $thread->creator->avatar_path }}" alt="{{ $thread->creator->username }}">
+                </p>
             </div>
-
-            <div class="card-footer">
-                <small>
-                    <a  href="{{ $thread->path() }}">
-                        {{ $thread->replies_count }} {{ str_plural('reply', $thread->replies_count) }}
-                    </a>
-
-                    | {{ $thread->visits }} Visits
-                </small>
-                <a class="btn btn-secondary float-right btn-sm" href="{{ $thread->path() }}">Read More</a>
+            <div class="media-content">
+                <div class="content">
+                    <p>
+                        <a href="/{{ '@' . $thread->creator->username }}">{{ '@' . $thread->creator->username }}</a> created this thread {{ $thread->created_at->diffForHumans() }}  &nbsp;
+                        <span class="tag">{{ $thread->visits }} Visits</span>
+                    </p>
+                </div>
             </div>
         </div>
-        <br>
-    </div>
-
+    </article>
 @empty
     <p>There are no relevant results at this time.</p>
 @endforelse
+
+</div>
