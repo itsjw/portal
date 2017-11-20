@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Auth;
 
+use App\Http\Controllers\Controller;
 use App\Models\User;
 use Exception;
-use App\Http\Controllers\Controller;
-use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redirect;
 use Laravel\Socialite\Facades\Socialite;
@@ -39,6 +38,7 @@ class SocialController extends Controller
 
     /**
      * @param $socialUser
+     *
      * @return mixed
      */
     private function findOrCreateGithubUser($socialUser)
@@ -56,16 +56,16 @@ class SocialController extends Controller
         }
 
         return User::create([
-            'name' => $socialUser->name,
-            'username' => str_slug($socialUser->nickname, '_'),
-            'email' => $socialUser->email,
-            'github_id' => $socialUser->id,
-            'github_url' => 'https://github.com/'.$socialUser->nickname,
-            'avatar_path' => $socialUser->avatar,
-            'affiliate_id' => str_random(10),
-            'is_verified' => false,
+            'name'               => $socialUser->name,
+            'username'           => str_slug($socialUser->nickname, '_'),
+            'email'              => $socialUser->email,
+            'github_id'          => $socialUser->id,
+            'github_url'         => 'https://github.com/'.$socialUser->nickname,
+            'avatar_path'        => $socialUser->avatar,
+            'affiliate_id'       => str_random(10),
+            'is_verified'        => false,
             'confirmation_token' => str_random(64),
-            'password' => bcrypt(str_random(12))
+            'password'           => bcrypt(str_random(12)),
         ]);
     }
 }

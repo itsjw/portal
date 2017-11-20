@@ -15,15 +15,15 @@ class CreatePostRequest extends FormRequest
      */
     public function authorize()
     {
-        return Gate::allows('create', new \App\Models\Reply);
+        return Gate::allows('create', new \App\Models\Reply());
     }
 
     /**
      * Handle a failed authorization attempt.
      *
-     * @return void
-     *
      * @throws ThrottleException
+     *
+     * @return void
      */
     protected function failedAuthorization()
     {
@@ -40,8 +40,7 @@ class CreatePostRequest extends FormRequest
     public function rules()
     {
         return [
-            'body' => 'required|spamfree'
+            'body' => 'required|spamfree',
         ];
     }
-
 }

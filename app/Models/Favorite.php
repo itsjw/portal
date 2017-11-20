@@ -6,7 +6,7 @@ use App\Traits\RecordsActivity;
 use Illuminate\Database\Eloquent\Model;
 
 /**
- * App\Models\Favorite
+ * App\Models\Favorite.
  *
  * @property int $id
  * @property int $user_id
@@ -16,6 +16,7 @@ use Illuminate\Database\Eloquent\Model;
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Activity[] $activity
  * @property-read \Illuminate\Database\Eloquent\Model|\Eloquent $favorited
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Favorite whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Favorite whereFavoritedId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Favorite whereFavoritedType($value)

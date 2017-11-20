@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
 /**
- * App\Models\Channel
+ * App\Models\Channel.
  *
  * @property int $id
  * @property string $name
@@ -14,6 +14,7 @@ use Laravel\Scout\Searchable;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Thread[] $threads
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Channel whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Channel whereId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Channel whereName($value)
@@ -31,7 +32,7 @@ class Channel extends Model
     protected $fillable = ['name', 'slug'];
 
     /**
-     * Booting model
+     * Booting model.
      */
     protected static function boot()
     {

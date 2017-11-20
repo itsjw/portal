@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Web\Links;
 
+use App\Http\Controllers\Controller;
 use App\Models\LinkCategory;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class LinkCategoryController extends Controller
 {
@@ -33,7 +33,8 @@ class LinkCategoryController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -44,7 +45,8 @@ class LinkCategoryController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\LinkCategory  $linkCategory
+     * @param \App\Models\LinkCategory $linkCategory
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(LinkCategory $linkCategory)
@@ -55,7 +57,8 @@ class LinkCategoryController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\LinkCategory  $linkCategory
+     * @param \App\Models\LinkCategory $linkCategory
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(LinkCategory $linkCategory)
@@ -66,8 +69,9 @@ class LinkCategoryController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\LinkCategory  $linkCategory
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\LinkCategory $linkCategory
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, LinkCategory $linkCategory)
@@ -78,7 +82,8 @@ class LinkCategoryController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\LinkCategory  $linkCategory
+     * @param \App\Models\LinkCategory $linkCategory
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(LinkCategory $linkCategory)

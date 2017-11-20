@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Web\Users;
 
+use App\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\User;
-use App\Http\Controllers\Controller;
 
 class ProfilesController extends Controller
 {
@@ -12,6 +12,7 @@ class ProfilesController extends Controller
      * Show the user's profile.
      *
      * @param $username
+     *
      * @return \Illuminate\Contracts\View\Factory|\Illuminate\View\View
      */
     public function show($username)
@@ -20,7 +21,7 @@ class ProfilesController extends Controller
 
         return view('profiles.show', [
             'profileUser' => $user,
-            'activities' => Activity::feed($user)
+            'activities'  => Activity::feed($user),
         ]);
     }
 }

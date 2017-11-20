@@ -6,7 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
 /**
- * App\Models\Meetup
+ * App\Models\Meetup.
  *
  * @property int $id
  * @property string|null $name
@@ -25,6 +25,7 @@ use Laravel\Scout\Searchable;
  * @property \Carbon\Carbon|null $created_at
  * @property \Carbon\Carbon|null $updated_at
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\User[] $attendees
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Meetup whereCity($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Meetup whereCountry($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Meetup whereCreatedAt($value)
@@ -53,6 +54,4 @@ class Meetup extends Model
     protected $fillable = [
         'name', 'shortname', 'url', 'icalendar_url', 'latitude', 'longitude', 'state', 'country', 'slug',
     ];
-
-
 }

@@ -3,13 +3,13 @@
 namespace App\Models;
 
 use Carbon\Carbon;
-use Illuminate\Notifications\Notifiable;
 use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
 
 /**
- * App\Models\User
+ * App\Models\User.
  *
  * @property int $id
  * @property string $name
@@ -48,6 +48,7 @@ use Laravel\Scout\Searchable;
  * @property-read \Illuminate\Notifications\DatabaseNotificationCollection|\Illuminate\Notifications\DatabaseNotification[] $notifications
  * @property-read \Illuminate\Database\Eloquent\Collection|\App\Models\Thread[] $threads
  * @property-read \Illuminate\Database\Eloquent\Collection|\Laravel\Passport\Token[] $tokens
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAddress($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAffiliateId($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\User whereAvatarPath($value)
@@ -103,12 +104,12 @@ class User extends Authenticatable
     ];
 
     /**
-    * @var array
-    */
+     * @var array
+     */
     protected $casts = [
-        'is_admin' => 'boolean',
+        'is_admin'    => 'boolean',
         'is_verified' => 'boolean',
-        'is_sponsor' => 'boolean',
+        'is_sponsor'  => 'boolean',
     ];
 
     /**
@@ -164,6 +165,7 @@ class User extends Authenticatable
 
     /**
      * @param $avatar
+     *
      * @return string
      */
     public function getAvatarPathAttribute($avatar)
@@ -173,11 +175,12 @@ class User extends Authenticatable
 
     /**
      * @param $thread
+     *
      * @return string
      */
     public function visitedThreadCacheKey($thread)
     {
-        return sprintf("users.%s.visits.%s", $this->id, $thread->id);
+        return sprintf('users.%s.visits.%s', $this->id, $thread->id);
     }
 
     /**
@@ -195,5 +198,4 @@ class User extends Authenticatable
     {
         return $this->is_admin == 0;
     }
-
 }

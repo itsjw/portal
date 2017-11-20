@@ -2,10 +2,9 @@
 
 namespace App\Http\Controllers\Web;
 
+use App\Http\Controllers\Controller;
 use App\Models\Meetup;
 use App\Models\User;
-use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class SiteController extends Controller
 {
@@ -34,6 +33,7 @@ class SiteController extends Controller
     public function getAbout()
     {
         $sponsors = User::where('is_sponsor', 1)->get();
+
         return view('pages.about', compact('sponsors'));
     }
 

@@ -28,6 +28,7 @@ class Meta implements Htmlable
 
     /**
      * @param string $defaultTitle
+     *
      * @return $this
      */
     public function defaultTitle(string $defaultTitle)
@@ -47,6 +48,7 @@ class Meta implements Htmlable
 
     /**
      * @param array $properties
+     *
      * @return $this
      */
     public function with(array $properties)
@@ -61,6 +63,7 @@ class Meta implements Htmlable
     /**
      * @param string $name
      * @param $value
+     *
      * @return $this
      */
     public function set(string $name, $value)

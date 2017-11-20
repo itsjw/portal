@@ -3,7 +3,6 @@
 namespace App\Listeners\Forums;
 
 use App\Events\Forums\ThreadReceivedNewReply;
-use Illuminate\Queue\InteractsWithQueue;
 use Illuminate\Contracts\Queue\ShouldQueue;
 
 class NotifySubscribers implements ShouldQueue
@@ -21,7 +20,8 @@ class NotifySubscribers implements ShouldQueue
     /**
      * Handle the event.
      *
-     * @param  ThreadReceivedNewReply $event
+     * @param ThreadReceivedNewReply $event
+     *
      * @return void
      */
     public function handle(ThreadReceivedNewReply $event)

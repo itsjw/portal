@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 use Laravel\Scout\Searchable;
 
 /**
- * App\Models\Reply
+ * App\Models\Reply.
  *
  * @property int $id
  * @property int $thread_id
@@ -24,6 +24,7 @@ use Laravel\Scout\Searchable;
  * @property-read bool $is_favorited
  * @property-read \App\Models\User $owner
  * @property-read \App\Models\Thread $thread
+ *
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Reply whereBody($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Reply whereCreatedAt($value)
  * @method static \Illuminate\Database\Eloquent\Builder|\App\Models\Reply whereId($value)
@@ -52,7 +53,7 @@ class Reply extends Model
     protected $appends = ['favoritesCount', 'isFavorited', 'isBest'];
 
     /**
-     *  Boot Model
+     *  Boot Model.
      */
     protected static function boot()
     {
@@ -97,6 +98,7 @@ class Reply extends Model
     public function mentionedUsers()
     {
         preg_match_all('/@([\w\-]+)/', $this->body, $matches);
+
         return $matches[1];
     }
 
@@ -105,7 +107,7 @@ class Reply extends Model
      */
     public function path()
     {
-        return $this->thread->path() . "#reply-{$this->id}";
+        return $this->thread->path()."#reply-{$this->id}";
     }
 
     /**

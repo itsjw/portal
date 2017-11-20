@@ -45,19 +45,19 @@ class ImportMeetups extends Command
         $newMeetup = new Meetup();
         foreach ($meetups as $meetup) {
             $newMeetup->create([
-                'name' => $meetup->name,
-                'link' => $meetup->link,
-                'url_name' => $meetup->urlname,
-                'description' => $meetup->description,
-                'city' => $meetup->city,
-                'country' => $meetup->country,
+                'name'                   => $meetup->name,
+                'link'                   => $meetup->link,
+                'url_name'               => $meetup->urlname,
+                'description'            => $meetup->description,
+                'city'                   => $meetup->city,
+                'country'                => $meetup->country,
                 'localized_country_name' => $meetup->localized_country_name,
-                'state' => $meetup->state,
-                'lat' => $meetup->lat,
-                'lon' => $meetup->lon,
-                'member_count' => $meetup->members,
-                'who' => $meetup->who,
-                'timezone' => $meetup->timezone,
+                'state'                  => $meetup->state,
+                'lat'                    => $meetup->lat,
+                'lon'                    => $meetup->lon,
+                'member_count'           => $meetup->members,
+                'who'                    => $meetup->who,
+                'timezone'               => $meetup->timezone,
             ]);
         }
     }

@@ -11,7 +11,8 @@ class SearchController extends Controller
     /**
      * Show the search results.
      *
-     * @param  \App\Models\Trending $trending
+     * @param \App\Models\Trending $trending
+     *
      * @return mixed
      */
     public function show(Trending $trending)
@@ -23,8 +24,8 @@ class SearchController extends Controller
         }
 
         return view('threads.index', [
-            'threads' => $threads,
-            'trending' => $trending->get()
+            'threads'  => $threads,
+            'trending' => $trending->get(),
         ]);
     }
 }
