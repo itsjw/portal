@@ -25,6 +25,19 @@ class EventServiceProvider extends ServiceProvider
             'App\Listeners\Forums\NotifyMentionedUsers',
             'App\Listeners\Forums\NotifySubscribers',
         ],
+
+        /*
+         * API Events
+         */
+        'App\Events\Api\Users\UserCreated' => [
+            'App\Listeners\Api\Users\SendPasswordResetMail',
+            'App\Listeners\Api\Users\SendWelcomeMail',
+        ],
+
+        'App\Events\Api\Users\UserUpdated' => [
+            'App\Listeners\Api\Users\SendUpdatedEmail',
+            'App\Listeners\Api\Users\SendUpdatedNotification',
+        ],
     ];
 
     /**
