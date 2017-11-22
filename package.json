@@ -40,6 +40,7 @@
         "places.js": "^1.4.15",
         "popper.js": "^1.12.4",
         "precss": "^2.0.0",
+        "pusher-chatkit-client": "^0.1.2",
         "pusher-feeds-client": "^0.10.0",
         "pusher-feeds-server": "^0.8.1",
         "pusher-js": "^4.2.1",

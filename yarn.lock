@@ -5765,6 +5765,12 @@ punycode@^1.2.4, punycode@^1.4.1:
   version "1.4.1"
   resolved "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
 
+pusher-chatkit-client@^0.1.2:
+  version "0.1.2"
+  resolved "https://registry.yarnpkg.com/pusher-chatkit-client/-/pusher-chatkit-client-0.1.2.tgz#7bf728427d537f9ef58c8f5f3bd70dfba7b5957e"
+  dependencies:
+    pusher-platform "^0.11.1"
+
 pusher-feeds-client@^0.10.0:
   version "0.10.0"
   resolved "https://registry.yarnpkg.com/pusher-feeds-client/-/pusher-feeds-client-0.10.0.tgz#380aad2964a70b0230a09d311979f21c06ab6bc9"
@@ -5795,7 +5801,7 @@ pusher-platform-node@^0.10.0:
     jsonwebtoken "^7.4.1"
     request "^2.81.0"
 
-pusher-platform@^0.11.0:
+pusher-platform@^0.11.0, pusher-platform@^0.11.1:
   version "0.11.1"
   resolved "https://registry.yarnpkg.com/pusher-platform/-/pusher-platform-0.11.1.tgz#a744312f60f4f828e2aeea0cd757267a52c907ac"
   dependencies:
