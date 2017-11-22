@@ -72,16 +72,28 @@ Route::delete('/threads/{channel}/{thread}/subscriptions', 'Web\Forums\ThreadSub
 Route::post('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@store');
 Route::delete('/replies/{reply}/favorites', 'Web\Forums\FavoritesController@destroy');
 
-Route::get('/@{user}', 'Web\Users\ProfilesController@show')->name('profile');
-Route::get('/profiles/{username}', function ($username) {
-    return redirect('/@'.$username);
-});
-
-Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
-Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');
-
 /*
  * Link Routes
  */
 Route::resource('links', 'Web\Links\LinkController');
 Route::resource('link-categories', 'Web\Links\LinkCategoryController');
+
+/*
+ * Meetup Routes
+ */
+Route::resource('meetups', 'Web\Meetups\MeetupController');
+
+/*
+ * Job Routes
+ */
+Route::resource('jobs', 'Web\Jobs\JobController');
+
+/*
+ * Discount Routes
+ */
+Route::resource('discounts', 'Web\Discounts\DiscountController');
+
+/*
+ * Stripe Routes
+ */
+Route::post('stripe/webhook', '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook');
