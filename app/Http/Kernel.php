@@ -32,7 +32,7 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
-            \Illuminate\Session\Middleware\AuthenticateSession::class,
+            //\Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
@@ -64,5 +64,6 @@ class Kernel extends HttpKernel
         'scope'          => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         //'must-be-confirmed' => \App\Http\Middleware\RedirectIfEmailNotConfirmed::class,
         'admin' => \App\Http\Middleware\Administrator::class,
+        'client' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
     ];
 }
