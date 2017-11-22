@@ -1,5 +1,6 @@
 <?php
 
+use App\Models\Channel;
 use Illuminate\Database\Seeder;
 
 class ChannelSeeder extends Seeder
@@ -11,52 +12,62 @@ class ChannelSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('channels')->insert([
+        Channel::create([
+            'name' => 'Lounge',
+            'slug' => 'talk-lounge',
+        ]);
+
+        Channel::create([
+            'name' => 'Off Topic',
+            'slug' => 'talk-off-topic',
+        ]);
+
+        Channel::create([
             'name' => 'Laravel',
             'slug' => 'framework-laravel',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Symfony',
             'slug' => 'framework-symfony',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Phalcon',
             'slug' => 'framework-phalcon',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Yii',
             'slug' => 'framework-yii',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Slim',
             'slug' => 'framework-slim',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'CakePHP',
             'slug' => 'framework-cakephp',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'FuelPHP',
             'slug' => 'framework-fuelphp',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Aura',
             'slug' => 'framework-aura',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Codeigniter',
             'slug' => 'framework-codeigniter',
         ]);
 
-        DB::table('channels')->insert([
+        Channel::create([
             'name' => 'Zend',
             'slug' => 'framework-zend',
         ]);
