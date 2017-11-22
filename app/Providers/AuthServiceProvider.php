@@ -13,9 +13,13 @@ class AuthServiceProvider extends ServiceProvider
      * @var array
      */
     protected $policies = [
-        'App\Models\Thread' => 'App\Policies\Forums\ThreadPolicy',
-        'App\Models\Reply'  => 'App\Policies\Forums\ReplyPolicy',
-        'App\Models\User'   => 'App\Policies\Forums\UserPolicy',
+        'App\Models\Thread'     => 'App\Policies\Forums\ThreadPolicy',
+        'App\Models\Reply'      => 'App\Policies\Forums\ReplyPolicy',
+        'App\Models\User'       => 'App\Policies\UserPolicy',
+        'App\Models\Job'        => 'App\Policies\JobPolicy',
+        'App\Models\Link'       => 'App\Policies\LinkPolicy',
+        'App\Models\Meetup'     => 'App\Policies\MeetupPolicy',
+        'App\Models\Discount'   => 'App\Policies\DiscountPolicy',
     ];
 
     /**
@@ -28,5 +32,6 @@ class AuthServiceProvider extends ServiceProvider
         $this->registerPolicies();
 
         Passport::routes();
+        Passport::enableImplicitGrant();
     }
 }
