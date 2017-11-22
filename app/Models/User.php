@@ -2,11 +2,13 @@
 
 namespace App\Models;
 
+use App\Traits\Followable;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
+use Laravel\Cashier\Billable;
 
 /**
  * App\Models\User.
@@ -83,7 +85,7 @@ use Laravel\Scout\Searchable;
  */
 class User extends Authenticatable
 {
-    use HasApiTokens, Notifiable, Searchable;
+    use HasApiTokens, Notifiable, Searchable, Billable, Followable;
 
     /**
      * The attributes that are mass assignable.
@@ -197,5 +199,13 @@ class User extends Authenticatable
     public function canBeImpersonated()
     {
         return $this->is_admin == 0;
+    }
+
+    /**
+     * @return \Illuminate\Database\Eloquent\Relations\HasMany
+     */
+    public function links()
+    {
+        return $this->hasMany(Link::class, 'user_id', 'id');
     }
 }
