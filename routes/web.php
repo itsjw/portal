@@ -1,17 +1,34 @@
 <?php
 
-
+/*
+ * Page Routes
+ */
 Route::get('/', 'Web\SiteController@getMap');
+Route::get('/home', 'HomeController@index')->name('home');
 
+/*
+ * User Routes
+ */
+Route::get('/@{username}', 'Web\Users\UserController@show')->name('profile');
+Route::resource('users', 'Web\Users\UserController');
+Route::get('/profiles/{username}', function ($username) {
+    return redirect('/@'.$username);
+});
+Route::get('/users/{username}', function ($username) {
+    return redirect('/@'.$username);
+});
+Route::get('/public-api/users', 'Api\Users\UserController@index');
+Route::get('/profiles/{user}/notifications', 'Web\Forums\UserNotificationsController@index');
+Route::delete('/profiles/{user}/notifications/{notification}', 'Web\Forums\UserNotificationsController@destroy');
+
+/*
+ * Auth Routes
+ */
 Auth::routes();
 Route::get('/auth/social/github', 'Auth\SocialController@redirectToGithub');
 Route::get('/auth/social/callback/github', 'Auth\SocialController@handleGithubCallback');
+Route::get('/auth/callback', function () {
 
-Route::get('/test/{id}', function ($id) {
-    $user = \App\Models\User::find($id);
-    auth()->login($user);
-
-    back();
 });
 
 Route::get('/confirm/{token}', function ($token) {
