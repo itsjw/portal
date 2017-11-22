@@ -30,39 +30,29 @@
                 </div>
             </div>
 
+            <a class="navbar-item" href="{{ route('users.index') }}">
+                Users
+            </a>
+
             <div class="navbar-item has-dropdown is-hoverable">
-                <a class="navbar-link" href="/documentation/overview/start/">
-                    Docs
+                <a class="navbar-link" href="#">
+                    Resources
                 </a>
                 <div class="navbar-dropdown is-boxed">
-                    <a class="navbar-item" href="/documentation/overview/start/">
-                        Overview
+                    <a class="navbar-item" href="{{ route('jobs.index') }}">
+                        Jobs
                     </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/modifiers/syntax/">
-                        Modifiers
+                    <a class="navbar-item" href="{{ route('links.index') }}">
+                        Links
                     </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/columns/basics/">
-                        Columns
+                    <a class="navbar-item" href="{{ route('discounts.index') }}">
+                        Discounts
                     </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/layout/container/">
-                        Layout
-                    </a>
-                    <a class="navbar-item" href="https://bulma.io/documentation/form/general/">
-                        Form
-                    </a>
-                    <hr class="navbar-divider">
-                    <a class="navbar-item" href="https://bulma.io/documentation/elements/box/">
-                        Elements
-                    </a>
-                    <a class="navbar-item is-active" href="https://bulma.io/documentation/components/breadcrumb/">
-                        Components
+                    <a class="navbar-item" href="{{ route('meetups.index') }}">
+                        Meetups
                     </a>
                 </div>
             </div>
-
-            <a class="navbar-item" href="{{ route('links.index') }}">
-                Links
-            </a>
         </div>
 
         <div class="navbar-end">
@@ -87,9 +77,15 @@
                     <a class="navbar-link" href="#">{{ Auth::user()->name }}</a>
 
                     <div class="navbar-dropdown">
-                        <a class="navbar-item" href="{{ url('/@' . auth()->user()->username) }}">
-                            My Profile
+                        <a class="navbar-item" href="/home">
+                            Feed
                         </a>
+
+                        <a class="navbar-item" href="{{ url('/@' . auth()->user()->username) }}">
+                            Profile
+                        </a>
+
+                        <a class="navbar-divider"></a>
 
                         <a class="navbar-item" href="{{ route('logout') }}"
                            onclick="event.preventDefault();document.getElementById('logout-form').submit();">
