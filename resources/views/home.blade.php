@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('page_title', 'PageTitle')
+@section('page_title', 'Feed')
 
 @push('header_scripts')
 
