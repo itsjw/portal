@@ -27,6 +27,11 @@ class CreateLinksTable extends Migration
                 ->on('link_categories')
                 ->onDelete('cascade');
 
+            $table->foreign('user_id')
+                ->references('id')
+                ->on('users')
+                ->onDelete('cascade');
+
             $table->softDeletes();
             $table->timestamps();
         });
