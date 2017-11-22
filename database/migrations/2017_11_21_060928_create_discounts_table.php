@@ -15,6 +15,13 @@ class CreateDiscountsTable extends Migration
     {
         Schema::create('discounts', function (Blueprint $table) {
             $table->increments('id');
+
+            $table->string('title');
+            $table->string('amount')->nullable();
+            $table->string('url')->nullable();
+            $table->string('promo_code')->nullable();
+            $table->longText('description')->nullable();
+
             $table->timestamps();
         });
     }
