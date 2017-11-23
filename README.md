@@ -1,11 +1,13 @@
 # portal
 Source of the new portal
 
+[![StyleCI](https://styleci.io/repos/111126398/shield?style=flat-square)](https://styleci.io/repos/111126398)
 [![GitHub issues](https://img.shields.io/github/issues/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/issues)
 [![GitHub forks](https://img.shields.io/github/forks/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/network)
 [![GitHub stars](https://img.shields.io/github/stars/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/stargazers)
 [![GitHub license](https://img.shields.io/github/license/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/blob/master/LICENSE)
 [![Gratipay](https://img.shields.io/gratipay/project/PHPMap.svg?style=flat-square)](https://gratipay.com/PHPMap/)
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flats-square)](https://stackshare.io/fwartner/phpmap)
 
 ## About PHPMap
 
