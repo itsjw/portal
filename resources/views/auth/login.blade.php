@@ -11,12 +11,15 @@
 @endpush
 
 @section('content')
-    <section class="hero is-primary">
+    <section class="hero is-bold is-danger is-small">
         <div class="hero-body">
             <div class="container">
-                <h1 class="title">
+                <h1 class="title is-1">
                     Login
                 </h1>
+                <h2 class="subtitle">
+                    Welcome back! Please sign in to create new content for your fellows.
+                </h2>
             </div>
         </div>
     </section>
@@ -94,7 +97,7 @@
                             <div class="field-body">
                                 <div class="field is-grouped">
                                     <div class="control">
-                                        <button type="submit" class="button is-primary">Login</button>
+                                        <button type="submit" class="button is-danger">Login</button>
                                     </div>
 
                                     <div class="control">
