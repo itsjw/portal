@@ -19,9 +19,9 @@
         </nav>
 
         <div class="columns is- is-marginless is-centered">
-            <div class="column column is-3">
+            <div class="column is-3">
                 @if (auth()->check())
-                    <a class="button is-primary" href="/threads/create">New Thread</a>
+                    <a class="button is-danger" href="/threads/create">New Thread</a>
                     <br><br>
                 @endif
                 <aside class="menu">
@@ -48,7 +48,7 @@
                     <div id="code-sponsor-widget"></div>
             </div>
 
-            <div class="column column is-9">
+            <div class="column is-9">
                 @include ('threads._list')
 
                 {{ $threads->render() }}
