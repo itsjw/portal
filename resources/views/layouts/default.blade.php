@@ -16,9 +16,6 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/instantsearch.js@2.2.4/dist/instantsearch.min.css">
     @stack('styles')
     <style>
-        body {
-            padding-bottom: 100px;
-        }
         .navbar {
             margin-bottom: 0px;
         }
