@@ -1,4 +1,4 @@
-<nav class="navbar is-white has-shadow">
+<nav class="navbar is-danger has-shadow">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img src="https://raw.githubusercontent.com/PHPMap/phpmap/master/public/images/logo_big.png" alt="phpmap.co Logo" width="112" height="28">
