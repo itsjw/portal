@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Database\Eloquent\Model;
+use Laravel\Scout\Searchable;
 
 /**
  * App\Models\LinkCategory.
@@ -24,6 +25,8 @@ use Illuminate\Database\Eloquent\Model;
  */
 class LinkCategory extends Model
 {
+    use Searchable;
+
     protected $fillable = [
         'title', 'slug',
     ];
