@@ -87,6 +87,7 @@ Route::resource('meetups', 'Web\Meetups\MeetupController');
  * Job Routes
  */
 Route::resource('jobs', 'Web\Jobs\JobController');
+Route::resource('job-category', 'Web\Jobs\JobCategoryController');
 
 /*
  * Discount Routes
@@ -97,3 +98,14 @@ Route::resource('discounts', 'Web\Discounts\DiscountController');
  * Stripe Routes
  */
 Route::post('stripe/webhook', '\Laravel\Cashier\Http\Controllers\WebhookController@handleWebhook');
+
+/*
+ * Newsletter Routes
+ */
+Route::post('newsletter/subscribe', 'Web\Newsletter\NewsletterController@subscribe');
+Route::post('newsletter/unsubscribe', 'Web\Newsletter\NewsletterController@unsubscribe');
+
+/*
+ * Sponsor Routes
+ */
+Route::post('sponsors/donate', 'Web\Sponsors\DonationController@donate');
