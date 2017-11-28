@@ -15,5 +15,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ChannelSeeder::class);
         $this->call(LinkCategorySeeder::class);
         $this->call(LinkSeeder::class);
+        $this->call(JobCategorySeeder::class);
     }
 }

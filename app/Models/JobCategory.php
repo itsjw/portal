@@ -9,6 +9,10 @@ class JobCategory extends Model
 {
     use Searchable;
 
+    protected $fillable = [
+        'title', 'slug'
+    ];
+
     /**
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
