@@ -7,16 +7,24 @@
         <!-- Sentry JS SDK 2.1.+ required -->
         <script src="https://cdn.ravenjs.com/3.3.0/raven.min.js"></script>
 
-        <script>
-            Raven.showReportDialog({
-                eventId: '{{ Sentry::getLastEventID() }}',
-                // use the public DSN (dont include your secret!)
-                dsn: 'https://e9ebbd88548a441288393c457ec90441@sentry.io/3235',
-                user: {
-                    'name': 'Jane Doe',
-                    'email': 'jane.doe@example.com',
-                }
-            });
-        </script>
+        @if(auth()->check())
+            <script>
+                Raven.showReportDialog({
+                    eventId: '{{ Sentry::getLastEventID() }}',
+                    dsn: 'https://e9ebbd88548a441288393c457ec90441@sentry.io/3235',
+                    user: {
+                        'name': '{{ auth()->user()->name }}',
+                        'email': '{{ auth()->user()->email }}',
+                    }
+                });
+            </script>
+            @else
+                <script>
+                    Raven.showReportDialog({
+                        eventId: '{{ Sentry::getLastEventID() }}',
+                        dsn: 'https://e9ebbd88548a441288393c457ec90441@sentry.io/3235',
+                    });
+                </script>
+        @endif
     @endif
 </div>

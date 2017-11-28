@@ -11,7 +11,9 @@
 @endpush
 
 @section('content')
-
+    <div class="container">
+        <users></users>
+    </div>
 @endsection
 
 @push('scripts')

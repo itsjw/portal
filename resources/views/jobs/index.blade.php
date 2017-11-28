@@ -23,6 +23,24 @@
                 <a class="button is-danger" href="/jobs/create">ADD A JOB</a>
             </div>
         </div>
+
+        <div class="hero-foot">
+            <nav class="tabs is-boxed is-fullwidth">
+                <div class="container">
+                    <ul>
+                        <li class="is-active">
+                            <a href="/jobs">All Jobs</a>
+                        </li>
+
+                        @foreach(\App\Models\JobCategory::all() as $jobcategory)
+                            <li>
+                                <a href="/job-category/{{ $jobcategory->slug }}">{{ $jobcategory->title }}</a>
+                            </li>
+                        @endforeach
+                    </ul>
+                </div>
+            </nav>
+        </div>
     </section>
 
     <div class="container">
@@ -41,9 +59,17 @@
 
                                 <div class="media-content">
                                     <div class="content">
-                                        <strong>{{ $job->title }}</strong> | <small>{{ $job->category->title }}</small>
-                                        <br>
-                                        {{ str_limit($job->description, '200') }}
+                                        <div class="columns">
+                                            <div class="column">
+                                                <strong>{{ $job->title }}</strong>
+                                                <br>
+                                                at <strong>{{ $job->company->name }}</strong> - {{ $job->company->city }}, {{ $job->company->country }}
+                                            </div>
+
+                                            <div class="column">
+                                                | <small>{{ $job->category->title }}</small>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </article>
@@ -57,8 +83,28 @@
 
             <div class="column is-3">
                 <div class="box">
-                    hhh
+                    <h2 class="subtitle">Jobs in your inbox!</h2>
+                    <form action="/newsletter/subscribe" method="post">
+                        {!! csrf_field() !!}
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-small" type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <div class="control">
+                                <input class="input is-small" type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <button type="submit" class="button is-small is-danger">Subscribe to our newsletter</button>
+                        </div>
+                    </form>
                 </div>
+
+                <div id="code-sponsor-widget"></div>
             </div>
 
         </div>
