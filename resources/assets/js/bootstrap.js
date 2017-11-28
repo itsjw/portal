@@ -85,3 +85,5 @@ window.flash = function (message, level = 'success') {
 };
 
 window.swal = require('sweetalert2');
+
+window.instantsearch = require('instantsearch.js');
