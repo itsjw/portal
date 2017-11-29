@@ -23,6 +23,7 @@ class LinkPolicy
     /**
      * @param $user
      * @param $ability
+     *
      * @return bool
      */
     public function before($user, $ability)
@@ -35,6 +36,7 @@ class LinkPolicy
     /**
      * @param User $user
      * @param Link $link
+     *
      * @return bool
      */
     public function update(User $user, Link $link)
@@ -45,6 +47,7 @@ class LinkPolicy
     /**
      * @param User $user
      * @param Link $link
+     *
      * @return bool
      */
     public function delete(User $user, Link $link)

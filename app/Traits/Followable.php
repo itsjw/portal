@@ -1,11 +1,12 @@
 <?php
+
 namespace App\Traits;
 
 use App\Models\Follow;
 use App\Models\User;
-use Illuminate\Database\Eloquent\Relations\HasMany;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 use Carbon\Carbon;
+use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\HasMany;
 
 trait Followable
 {
@@ -56,7 +57,8 @@ trait Followable
     /**
      * Follow.
      *
-     * @param  array|int  $ids
+     * @param array|int $ids
+     *
      * @return array
      */
     public function follow($ids): array
@@ -69,7 +71,8 @@ trait Followable
     /**
      * Add followers.
      *
-     * @param  array|int  $ids
+     * @param array|int $ids
+     *
      * @return array
      */
     public function addFollowers($ids): array
@@ -82,7 +85,8 @@ trait Followable
     /**
      * Unfollow.
      *
-     * @param  mixed  $ids
+     * @param mixed $ids
+     *
      * @return int
      */
     public function unfollow($ids): int
@@ -93,12 +97,13 @@ trait Followable
     /**
      * Merge followed_at to array for relationships table.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return array
      */
     private function mergeFollowedAt(array $ids): array
     {
-        $followedAt = new Carbon;
+        $followedAt = new Carbon();
 
         foreach ($ids as $id) {
             $mergedIds[$id] = ['followed_at' => $followedAt];
@@ -110,7 +115,8 @@ trait Followable
     /**
      * Check if it is following.
      *
-     * @param  array|int  $id
+     * @param array|int $id
+     *
      * @return bool
      */
     public function isFollowing($id): bool
@@ -127,7 +133,8 @@ trait Followable
     /**
      * Check if it is being followed.
      *
-     * @param  array|int  $id
+     * @param array|int $id
+     *
      * @return bool
      */
     public function isFollowedBy($id): bool
@@ -144,7 +151,8 @@ trait Followable
     /**
      * Check if it is mutual follow.
      *
-     * @param  array|int  $id
+     * @param array|int $id
+     *
      * @return bool
      */
     public function isMutualFollow($id): bool
@@ -155,7 +163,8 @@ trait Followable
     /**
      * Get follower user IDs.
      *
-     * @param  bool  $collection
+     * @param bool $collection
+     *
      * @return array|\Illuminate\Support\Collection
      */
     public function followerIds(bool $collection = false)
@@ -172,7 +181,8 @@ trait Followable
     /**
      * Get followee user IDs.
      *
-     * @param  bool  $collection
+     * @param bool $collection
+     *
      * @return array|\Illuminate\Support\Collection
      */
     public function followeeIds(bool $collection = false)
@@ -189,7 +199,8 @@ trait Followable
     /**
      * Reject IDs that is not a follower from the given array.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return array
      */
     public function rejectNotFollower(array $ids): array
@@ -203,7 +214,8 @@ trait Followable
     /**
      * Reject an ID that is not followee from the given array.
      *
-     * @param  array  $ids
+     * @param array $ids
+     *
      * @return array
      */
     public function rejectNotFollowee(array $ids): array

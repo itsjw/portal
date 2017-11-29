@@ -14,32 +14,32 @@ class JobCategorySeeder extends Seeder
     {
         JobCategory::create([
             'title' => 'Full Time',
-            'slug' => 'full-time',
+            'slug'  => 'full-time',
         ]);
 
         JobCategory::create([
             'title' => 'Part Time',
-            'slug' => 'part-time',
+            'slug'  => 'part-time',
         ]);
 
         JobCategory::create([
             'title' => 'Freelance',
-            'slug' => 'freelance',
+            'slug'  => 'freelance',
         ]);
 
         JobCategory::create([
             'title' => 'Temporary',
-            'slug' => 'temporary',
+            'slug'  => 'temporary',
         ]);
 
         JobCategory::create([
             'title' => 'Internship',
-            'slug' => 'internship',
+            'slug'  => 'internship',
         ]);
 
         JobCategory::create([
             'title' => 'Remote',
-            'slug' => 'remote',
+            'slug'  => 'remote',
         ]);
     }
 }

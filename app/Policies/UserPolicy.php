@@ -20,6 +20,7 @@ class UserPolicy
     /**
      * @param $user
      * @param $ability
+     *
      * @return bool
      */
     public function before($user, $ability)
@@ -31,6 +32,7 @@ class UserPolicy
 
     /**
      * @param User $user
+     *
      * @return bool
      */
     public function store(User $user)
@@ -43,6 +45,7 @@ class UserPolicy
     /**
      * @param User $user
      * @param User $updated
+     *
      * @return bool
      */
     public function update(User $user, User $updated)
@@ -53,6 +56,7 @@ class UserPolicy
     /**
      * @param User $user
      * @param User $updated
+     *
      * @return bool
      */
     public function delete(User $user, User $updated)

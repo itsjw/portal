@@ -6,9 +6,9 @@ use App\Traits\Followable;
 use Carbon\Carbon;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
+use Laravel\Cashier\Billable;
 use Laravel\Passport\HasApiTokens;
 use Laravel\Scout\Searchable;
-use Laravel\Cashier\Billable;
 
 /**
  * App\Models\User.

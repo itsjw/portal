@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers\Api\Jobs;
 
+use App\Http\Controllers\Controller;
 use App\Models\Job;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class JobController extends Controller
 {
@@ -31,7 +31,8 @@ class JobController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -42,7 +43,8 @@ class JobController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param \App\Models\Job $job
+     *
      * @return \Illuminate\Http\Response
      */
     public function show(Job $job)
@@ -53,7 +55,8 @@ class JobController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Job  $job
+     * @param \App\Models\Job $job
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit(Job $job)
@@ -64,8 +67,9 @@ class JobController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Job  $job
+     * @param \Illuminate\Http\Request $request
+     * @param \App\Models\Job          $job
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, Job $job)
@@ -76,7 +80,8 @@ class JobController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Job  $job
+     * @param \App\Models\Job $job
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy(Job $job)

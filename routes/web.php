@@ -28,7 +28,6 @@ Auth::routes();
 Route::get('/auth/social/github', 'Auth\SocialController@redirectToGithub');
 Route::get('/auth/social/callback/github', 'Auth\SocialController@handleGithubCallback');
 Route::get('/auth/callback', function () {
-
 });
 
 Route::get('/confirm/{token}', function ($token) {

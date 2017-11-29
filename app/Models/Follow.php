@@ -12,7 +12,7 @@ class Follow extends Model
      * @var array
      */
     protected $fillable = [
-        'follower_id', 'followee_id', 'followed_at'
+        'follower_id', 'followee_id', 'followed_at',
     ];
 
     /**
@@ -21,7 +21,7 @@ class Follow extends Model
      * @var array
      */
     protected $dates = [
-        'followed_at'
+        'followed_at',
     ];
 
     /**
@@ -34,7 +34,7 @@ class Follow extends Model
     /**
      * Create a new Eloquent model instance.
      *
-     * @param  array  $attributes
+     * @param array $attributes
      */
     public function __construct(array $attributes = [])
     {

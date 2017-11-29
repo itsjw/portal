@@ -2,15 +2,16 @@
 
 namespace App\Http\Controllers\Api\Users;
 
+use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class SubscriptionController extends Controller
 {
     /**
      * @param Request $request
+     *
      * @return static
      */
     public function createSubscription(Request $request)
@@ -38,6 +39,7 @@ class SubscriptionController extends Controller
 
     /**
      * @param Request $request
+     *
      * @return static
      */
     public function updateCard(Request $request)
