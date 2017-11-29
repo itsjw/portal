@@ -72,6 +72,14 @@ class Thread extends Model
     ];
 
     /**
+     * @return array
+     */
+    public function toSearchableArray()
+    {
+        return $this->toArray() + ['path' => $this->path()];
+    }
+
+    /**
      *  Boot Model.
      */
     protected static function boot()
