@@ -32,7 +32,7 @@
                     <div class="box">
                         <p class="subtitle is-7"><small>{{ $link->category->title }}</small> / <small>{{ $link->created_at->diffForHumans() }}</small></p>
                         <p class="title is-4">
-                            <a href="{{ route('links.show', $link) }}">{{ $link->title }}</a>
+                            <a href="{{ $link->url }}?utm_source=phpmap">{{ $link->title }}</a>
                         </p>
                         <small>Added by {{ $link->author->username }}</small>
                     </div>

@@ -19,49 +19,45 @@
         <nav class="level is-mobile">
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Users</p>
+                    <p class="heading"><a href="/users">Users</a></p>
                     <p class="title">{{ \App\Models\User::count() }}</p>
                 </div>
             </div>
 
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Threads</p>
+                    <p class="heading"><a href="/threads">Threads</a></p>
                     <p class="title">{{ \App\Models\Thread::count() }}</p>
                 </div>
             </div>
 
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Links</p>
+                    <p class="heading"><a href="/links">Links</a></p>
                     <p class="title">{{ \App\Models\Link::count() }}</p>
                 </div>
             </div>
 
             <div class="level-item has-text-centered">
                 <div>
-                    <p class="heading">Meetups</p>
+                    <p class="heading"><a href="/meetups">Meetups</a></p>
                     <p class="title">{{ \App\Models\Meetup::count() }}</p>
+                </div>
+            </div>
+
+            <div class="level-item has-text-centered">
+                <div>
+                    <p class="heading"><a href="/jobs">Jobs</a></p>
+                    <p class="title">{{ \App\Models\Job::count() }}</p>
                 </div>
             </div>
         </nav>
 
 
         <div class="container">
-            <form action="/sponsors/donate" method="POST">
-                {!! csrf_field() !!}
-                <script
-                        src="https://checkout.stripe.com/checkout.js" class="stripe-button"
-                        data-key="{{ env('STRIPE_KEY') }}"
-                        data-amount="999"
-                        data-name="docken.io"
-                        data-description="widget"
-                        data-image="https://stripe.com/img/documentation/checkout/marketplace.png"
-                        data-locale="auto"
-                        data-zip-code="true"
-                        data-currency="eur">
-                </script>
-            </form>
+            <div class="columns">
+
+            </div>
         </div>
 
     </div>
