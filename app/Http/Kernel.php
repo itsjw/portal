@@ -63,7 +63,7 @@ class Kernel extends HttpKernel
         'scopes'         => \Laravel\Passport\Http\Middleware\CheckScopes::class,
         'scope'          => \Laravel\Passport\Http\Middleware\CheckForAnyScope::class,
         //'must-be-confirmed' => \App\Http\Middleware\RedirectIfEmailNotConfirmed::class,
-        'admin' => \App\Http\Middleware\Administrator::class,
+        'admin'  => \App\Http\Middleware\Administrator::class,
         'client' => \Laravel\Passport\Http\Middleware\CheckClientCredentials::class,
     ];
 }

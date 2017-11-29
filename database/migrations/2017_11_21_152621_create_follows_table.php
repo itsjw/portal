@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
 class CreateFollowsTable extends Migration
 {
-
     /**
      * Get a user model key name.
      *
@@ -15,7 +14,8 @@ class CreateFollowsTable extends Migration
     private function userKeyName()
     {
         $userModel = \App\Models\User::class;
-        return (new $userModel)->getKeyName();
+
+        return (new $userModel())->getKeyName();
     }
 
     /**
@@ -26,7 +26,8 @@ class CreateFollowsTable extends Migration
     private function usersTableName()
     {
         $userModel = \App\Models\User::class;
-        return (new $userModel)->getTable();
+
+        return (new $userModel())->getTable();
     }
 
     /**

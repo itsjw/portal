@@ -23,6 +23,7 @@ class MeetupPolicy
     /**
      * @param $user
      * @param $ability
+     *
      * @return bool
      */
     public function before($user, $ability)
@@ -33,8 +34,9 @@ class MeetupPolicy
     }
 
     /**
-     * @param User $user
+     * @param User   $user
      * @param Meetup $meetup
+     *
      * @return bool
      */
     public function update(User $user, Meetup $meetup)
@@ -43,8 +45,9 @@ class MeetupPolicy
     }
 
     /**
-     * @param User $user
+     * @param User   $user
      * @param Meetup $meetup
+     *
      * @return bool
      */
     public function delete(User $user, Meetup $meetup)

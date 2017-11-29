@@ -14,32 +14,32 @@ class LinkCategorySeeder extends Seeder
     {
         LinkCategory::create([
             'title' => 'Packages',
-            'slug' => 'packages',
+            'slug'  => 'packages',
         ]);
 
         LinkCategory::create([
             'title' => 'Tutorials',
-            'slug' => 'tutorials',
+            'slug'  => 'tutorials',
         ]);
 
         LinkCategory::create([
             'title' => 'Projects',
-            'slug' => 'projects',
+            'slug'  => 'projects',
         ]);
 
         LinkCategory::create([
             'title' => 'Meetups',
-            'slug' => 'meetups',
+            'slug'  => 'meetups',
         ]);
 
         LinkCategory::create([
             'title' => 'News',
-            'slug' => 'news',
+            'slug'  => 'news',
         ]);
 
         LinkCategory::create([
             'title' => 'Social',
-            'slug' => 'social',
+            'slug'  => 'social',
         ]);
     }
 }

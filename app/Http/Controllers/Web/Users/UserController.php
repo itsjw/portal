@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers\Web\Users;
 
+use App\Http\Controllers\Controller;
 use App\Models\Activity;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -34,7 +34,8 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -46,6 +47,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param $username
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($username)
@@ -53,7 +55,7 @@ class UserController extends Controller
         $user = User::where('username', $username)->first();
 
         return view('users.show', [
-            'user' => $user,
+            'user'        => $user,
             'activities'  => Activity::feed($user),
         ]);
     }
@@ -62,6 +64,7 @@ class UserController extends Controller
      * Show the form for editing the specified resource.
      *
      * @param $username
+     *
      * @return \Illuminate\Http\Response
      */
     public function edit($username)
@@ -69,7 +72,7 @@ class UserController extends Controller
         $user = User::where('username', $username)->first();
 
         return view('users.edit', [
-            'user' => $user,
+            'user'        => $user,
             'activities'  => Activity::feed($user),
         ]);
     }
@@ -77,8 +80,9 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @param $username
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $username)
@@ -104,6 +108,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $username
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($username)

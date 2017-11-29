@@ -3,8 +3,6 @@
 namespace App\Listeners\Api\Users;
 
 use App\Events\Api\Users\UserCreated;
-use Illuminate\Queue\InteractsWithQueue;
-use Illuminate\Contracts\Queue\ShouldQueue;
 
 class SendPasswordResetMail
 {
@@ -21,7 +19,8 @@ class SendPasswordResetMail
     /**
      * Handle the event.
      *
-     * @param  UserCreated  $event
+     * @param UserCreated $event
+     *
      * @return void
      */
     public function handle(UserCreated $event)

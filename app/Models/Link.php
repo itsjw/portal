@@ -45,7 +45,7 @@ class Link extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'link_category_id', 'title', 'url'
+        'user_id', 'link_category_id', 'title', 'url',
     ];
 
     /**

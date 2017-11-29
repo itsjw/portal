@@ -10,7 +10,7 @@ class JobCategory extends Model
     use Searchable;
 
     protected $fillable = [
-        'title', 'slug'
+        'title', 'slug',
     ];
 
     /**

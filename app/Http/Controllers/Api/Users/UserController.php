@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Api\Users;
 
 use App\Events\Api\Users\UserCreated;
 use App\Events\Api\Users\UserUpdated;
+use App\Http\Controllers\Controller;
 use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Http\Request;
-use App\Http\Controllers\Controller;
 
 class UserController extends Controller
 {
@@ -15,6 +15,7 @@ class UserController extends Controller
      * Display a listing of the resource.
      *
      * @param Request $request
+     *
      * @return \Illuminate\Http\Resources\Json\AnonymousResourceCollection|\Illuminate\Http\Response
      */
     public function index(Request $request)
@@ -29,7 +30,8 @@ class UserController extends Controller
     /**
      * Store a newly created resource in storage.
      *
-     * @param  \Illuminate\Http\Request  $request
+     * @param \Illuminate\Http\Request $request
+     *
      * @return \Illuminate\Http\Response
      */
     public function store(Request $request)
@@ -59,6 +61,7 @@ class UserController extends Controller
      * Display the specified resource.
      *
      * @param $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function show($id)
@@ -71,8 +74,9 @@ class UserController extends Controller
     /**
      * Update the specified resource in storage.
      *
-     * @param  \Illuminate\Http\Request $request
+     * @param \Illuminate\Http\Request $request
      * @param $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function update(Request $request, $id)
@@ -100,6 +104,7 @@ class UserController extends Controller
      * Remove the specified resource from storage.
      *
      * @param $id
+     *
      * @return \Illuminate\Http\Response
      */
     public function destroy($id)

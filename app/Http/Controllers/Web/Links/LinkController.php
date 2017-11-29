@@ -54,9 +54,9 @@ class LinkController extends Controller
 
         $created = $link->create([
             'link_category_id' => $request->get('category_id'),
-            'title' => $request->get('title'),
-            'url' => $request->get('url'),
-            'user_id' => Auth::user()->id
+            'title'            => $request->get('title'),
+            'url'              => $request->get('url'),
+            'user_id'          => Auth::user()->id,
         ]);
 
         return redirect()->route('links.index');
@@ -98,9 +98,9 @@ class LinkController extends Controller
     {
         $updated = $link->update([
             'link_category_id' => $request->get('category_id'),
-            'title' => $request->get('title'),
-            'url' => $request->get('url'),
-            'user_id' => Auth::user()->id
+            'title'            => $request->get('title'),
+            'url'              => $request->get('url'),
+            'user_id'          => Auth::user()->id,
         ]);
 
         return redirect('/links');
