@@ -14,6 +14,7 @@
 
 @section('content')
     <php-map></php-map>
+    {{--<small-ad></small-ad>--}}
 
     <div class="container">
         <nav class="level is-mobile">
@@ -52,14 +53,12 @@
                 </div>
             </div>
         </nav>
+    </div>
 
+    <div class="container">
+        <div class="columns">
 
-        <div class="container">
-            <div class="columns">
-
-            </div>
         </div>
-
     </div>
 @endsection
 

@@ -30,6 +30,8 @@ Vue.component('passport-personal-access-tokens', require('./components/passport/
 
 Vue.component('users', require('./components/Users.vue'));
 
+Vue.component('small-ad', require('./components/SmallAd'));
+
 import InstantSearch from 'vue-instantsearch';
 Vue.use(InstantSearch);
 
