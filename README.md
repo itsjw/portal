@@ -38,7 +38,7 @@ cd /path/to/your/cloned/portal
 
 cp .env.example .env
 composer install
-yarn / npm install
+yarn / npm install (Yarn is way faster)
 
 php artisan migrate --seed // This will migrate the database & seed the initial data
 php artisan db:seed --class=DevelopmentSeeder // This will seed development data
