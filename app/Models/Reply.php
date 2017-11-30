@@ -6,7 +6,6 @@ use App\Traits\Favoritable;
 use App\Traits\RecordsActivity;
 use Carbon\Carbon;
 use Illuminate\Database\Eloquent\Model;
-use Laravel\Scout\Searchable;
 
 /**
  * App\Models\Reply.
@@ -35,7 +34,7 @@ use Laravel\Scout\Searchable;
  */
 class Reply extends Model
 {
-    use Favoritable, RecordsActivity, Searchable;
+    use Favoritable, RecordsActivity;
 
     /**
      * @var array
