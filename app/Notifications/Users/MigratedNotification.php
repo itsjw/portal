@@ -36,7 +36,7 @@ class MigratedNotification extends Notification implements ShouldQueue
      */
     public function via($notifiable)
     {
-        return ['mail'];
+        return ['mail', 'database'];
     }
 
     /**
@@ -55,7 +55,7 @@ class MigratedNotification extends Notification implements ShouldQueue
                     ->line('We just wanted to let you know, that you have been migrated to v3 of PHPMap..')
                     ->line('')
                     ->action('Show me v3!', url('/'))
-                    ->line('In case of having trouble with your login, consider reset you password.')
+                    ->line('In case of having trouble with your login, please reset you password.')
                     ->line('Thank you for using '.env('APP_NAME').'!');
     }
 
@@ -69,7 +69,9 @@ class MigratedNotification extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            //
+            'title' => 'Welcome to PHPMap v3!',
+            'message' => 'You have been succesfully migrated to v3.',
+            'action_link' => null
         ];
     }
 }
