@@ -52,6 +52,11 @@ Thank you for considering contributing to PHPMap! Checkout the `CONTRIBUTING.md`
 
 PHPMap is sponsored by
 
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap.svg' />
+</a>
+
+
 ## Backers
 
 Wanna be shown here? Make sure to support PHPMap on Patreon!
@@ -64,10 +69,8 @@ If you discover a security vulnerability within PHPMap, please send an e-mail to
 
 If you would like to support this project, feel free to donate.
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap.svg' />
-</a>
-
+[![Gratipay](https://img.shields.io/gratipay/project/PHPMap.svg?style=flat-square)](https://gratipay.com/PHPMap)
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square)](https://paypal.me/florianwartner)
 ## License
 
 PHPMap is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
