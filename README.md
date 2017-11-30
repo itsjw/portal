@@ -48,13 +48,6 @@ php artisan db:seed --class=DevelopmentSeeder // This will seed development data
 
 Thank you for considering contributing to PHPMap! Checkout the `CONTRIBUTING.md` file in the repo for more information.
 
-## Sponsors
-
-PHPMap is sponsored by
-
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap.svg' />
-</a>
 
 
 ## Backers
@@ -71,6 +64,22 @@ If you would like to support this project, feel free to donate.
 
 [![Gratipay](https://img.shields.io/gratipay/project/PHPMap.svg?style=flat-square)](https://gratipay.com/PHPMap)
 [![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg?style=flat-square)](https://paypal.me/florianwartner)
+
+## Sponsors
+
+PHPMap is sponsored by
+
+[![Pusher](https://github.com/PHPMap/portal/raw/master/.github/assets/rsz_pusher_logo_dark.png)](https://pusher.com)
+[![Algolia](https://github.com/PHPMap/portal/raw/master/.github/assets/rsz_algolia-logo-light.png)](https://algolia.com)
+[![DigitalOcean](https://github.com/PHPMap/portal/raw/master/.github/assets/rsz_1do_logo_horizontal_blue-3db19536.png)](https://m.do.co/c/64184b01d959)
+
+
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/56PVTMQwwLE1eNFhmArVx3xr/PHPMap/phpmap.svg' />
+</a>
+
+If you would like to sponsor PHPMap, send an email to sponsoring@phpmap.co
+
 ## License
 
 PHPMap is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
