@@ -7,7 +7,7 @@ Source of the new portal
 [![GitHub stars](https://img.shields.io/github/stars/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/stargazers)
 [![GitHub license](https://img.shields.io/github/license/PHPMap/portal.svg?style=flat-square)](https://github.com/PHPMap/portal/blob/master/LICENSE)
 [![Gratipay](https://img.shields.io/gratipay/project/PHPMap.svg?style=flat-square)](https://gratipay.com/PHPMap/)
-[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flats-square)](https://stackshare.io/fwartner/phpmap)
+[![StackShare](https://img.shields.io/badge/tech-stack-0690fa.svg?style=flat-square)](https://stackshare.io/fwartner/phpmap)
 
 ## About PHPMap
 
