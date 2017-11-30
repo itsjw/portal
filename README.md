@@ -18,16 +18,43 @@ You will be able to organize meetups & usergroups, work on projects together wit
 
 - Meet other php-developers around you
 - Organize meetups & usergroups in your area
+- Discuss with developers around you using the forums
 - Work on projects together
 - Find awesome projects
 - Have a look, who´s next to you
 - Create own articles / tutorials and more
 - Many more..
 
+## Development
+
+First clone the repository:
+
+```git clone https://github.com/phpmap/portal.git```
+
+After you cloned the portal, make sure to follow the next steps:
+
+```bash
+cd /path/to/your/cloned/portal
+
+cp .env.example .env
+composer install
+yarn / npm install
+
+php artisan migrate --seed // This will migrate the database & seed the initial data
+php artisan db:seed --class=DevelopmentSeeder // This will seed development data
+```
+
 ## Contributing
 
 Thank you for considering contributing to PHPMap! Checkout the `CONTRIBUTING.md` file in the repo for more information.
 
+## Sponsors
+
+PHPMap is sponsored by
+
+## Backers
+
+Wanna be shown here? Make sure to support PHPMap on Patreon!
 
 ## Security Vulnerabilities
 
