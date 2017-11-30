@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Web\Jobs;
 
 use App\Http\Controllers\Controller;
+use App\Models\Job;
 use App\Models\JobCategory;
 use Illuminate\Http\Request;
 
@@ -50,7 +51,7 @@ class JobCategoryController extends Controller
     public function show($slug)
     {
         $category = JobCategory::where('slug', $slug)->first();
-        $jobs = $category->jobs;
+        $jobs = Job::where('job_category_id', $category->id)->paginate(15);
 
         return view('jobs.categories.show', compact('category', 'jobs'));
     }
