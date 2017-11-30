@@ -69,9 +69,9 @@ class MigratedNotification extends Notification implements ShouldQueue
     public function toArray($notifiable)
     {
         return [
-            'title' => 'Welcome to PHPMap v3!',
-            'message' => 'You have been succesfully migrated to v3.',
-            'action_link' => null
+            'title'       => 'Welcome to PHPMap v3!',
+            'message'     => 'You have been succesfully migrated to v3.',
+            'action_link' => null,
         ];
     }
 }
