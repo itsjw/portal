@@ -28,7 +28,7 @@
             <nav class="tabs is-boxed is-fullwidth">
                 <div class="container">
                     <ul>
-                        <li class="is-active">
+                        <li >
                             <a href="/jobs">All Jobs</a>
                         </li>
 
@@ -78,6 +78,46 @@
                         @empty
                         <p>There are no jobs at the moment. How about <a href="/jobs/create">posting a new job</a>?</p>
                     @endforelse
+                </div>
+
+                <div class="container is-centered">
+                    @if ($jobs->hasPages())
+                        <nav class="level">
+
+                        </nav>
+                        <nav class="pagination is-small has-text-centered" role="navigation" aria-label="pagination">
+                            <a href="{{ $jobs->previousPageUrl() }}"
+                               class="pagination-previous {{ $jobs->onFirstPage() ? 'is-disabled': '' }}">
+                                Previous
+                            </a>
+
+                            <a href="{{ $jobs->nextPageUrl() }}"
+                               class="pagination-next {{ !$jobs->hasMorePages() ? 'is-disabled': '' }}">
+                                Next
+                            </a>
+
+                            <ul class="pagination-list">
+                                @foreach ($jobs as $element)
+
+                                    @if (is_string($element))
+                                        <li><span class="pagination-ellipsis">&hellip;</span></li>
+                                    @endif
+
+                                    @if (is_array($element))
+                                        @foreach ($element as $page => $url)
+                                            <li>
+                                                <a href="{{ $url }}"
+                                                   class="pagination-link {{ $page == $paginator->currentPage() ? 'is-current' : '' }}">
+                                                    {{ $page }}
+                                                </a>
+                                            </li>
+                                        @endforeach
+                                    @endif
+                                @endforeach
+                            </ul>
+                        </nav>
+
+                    @endif
                 </div>
             </div>
 
