@@ -3,6 +3,7 @@
 /*
  * User Routes
  */
+Route::get('users/profile-feed', 'Api\Users\ProfileFeedController@fetchFeed');
 Route::apiResource('users', 'Api\Users\UserController');
 Route::post('users/{user}/avatar', 'Api\Users\UserAvatarController@store')->name('avatar');
 

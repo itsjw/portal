@@ -29,6 +29,7 @@ Vue.component('passport-authorized-clients', require('./components/passport/Auth
 Vue.component('passport-personal-access-tokens', require('./components/passport/PersonalAccessTokens.vue'));
 
 Vue.component('users', require('./components/Users.vue'));
+Vue.component('profile-feed', require('./components/ProfileFeed'));
 
 Vue.component('small-ad', require('./components/SmallAd'));
 
