@@ -10,7 +10,7 @@ class FeedItem extends Model
      * @var array
      */
     protected $fillable = [
-        'user_id', 'subject'
+        'user_id', 'subject',
     ];
 
     /**
@@ -24,6 +24,7 @@ class FeedItem extends Model
     /**
      * @param $user
      * @param int $take
+     *
      * @return mixed
      */
     public static function feed($user, $take = 50)
@@ -38,13 +39,13 @@ class FeedItem extends Model
             });
     }
 
-
     /**
      * @param $user
      * @param int $take
+     *
      * @return mixed
      */
-    static function forUser($user, $take = 50)
+    public static function forUser($user, $take = 50)
     {
         return static::where('user_id', $user->id)
             ->latest()
