@@ -3,20 +3,20 @@
         <a class="navbar-item" href="/">
             <img src="https://raw.githubusercontent.com/PHPMap/phpmap/master/public/images/logo_big.png" alt="phpmap.co Logo" width="112" height="28">
         </a>
-        <div class="navbar-burger burger" data-target="navbarExampleTransparentExample">
+        <div class="navbar-burger burger" data-target="navbarRed">
             <span></span>
             <span></span>
             <span></span>
         </div>
     </div>
 
-    <div id="navbarExampleTransparentExample" class="navbar-menu">
+    <div id="navbarRed" class="navbar-menu">
         <div class="navbar-start">
             <a class="navbar-item" href="{{ url('/') }}">
                 Home
             </a>
 
-            <div class="navbar-item has-dropdown is-hoverable">
+            <div class="navbar-item has-dropdown is-hoverable is-desktop">
                 <a class="navbar-link" href="{{ url('/threads') }}">
                     Forums
                 </a>
