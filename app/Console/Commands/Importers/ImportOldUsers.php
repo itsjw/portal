@@ -44,33 +44,35 @@ class ImportOldUsers extends Command
 
         $newUser = new User();
         foreach ($users as $user) {
-            $newUser->create([
-                'name'     => $user->username,
-                'email'    => $user->email,
-                'username' => $user->username,
-                //'password' => bcrypt(str_random(13)),
-                'password'      => $user->password ?? bcrypt(str_random(13)),
-                'avatar_path'   => null,
-                'profile_cover' => $user->profile_cover,
-                'github_id'     => $user->github_id,
-                'is_admin'      => $user->is_admin,
-                'lat'           => $user->lat,
-                'lng'           => $user->lng,
-                'address'       => $user->address,
-                'city'          => $user->city,
-                'country'       => $user->country,
-                'company'       => $user->company,
-                'intro'         => $user->intro,
-                'website'       => $user->website,
-                'github_url'    => $user->github_url,
-                'twitter_url'   => $user->twitter_url,
-                'facebook_url'  => $user->facebook_url,
-                'linkedin_url'  => $user->linkedin_url,
-                'is_verified'   => $user->is_verified,
-                'is_sponsor'    => $user->is_sponsor,
-                'affiliate_id'  => $user->affiliate_id,
-                'referred_by'   => null,
-            ]);
+            if ($user->email != 'f.wartner@phpmap.co') {
+                $newUser->create([
+                    'name'     => $user->name,
+                    'email'    => $user->email,
+                    'username' => $user->username,
+                    'password'      => $user->password ?? bcrypt(str_random(13)),
+                    'avatar_path'   => null,
+                    'profile_cover' => $user->profile_cover,
+                    'github_id'     => $user->github_id,
+                    'is_admin'      => $user->is_admin,
+                    'lat'           => $user->lat,
+                    'lng'           => $user->lng,
+                    'address'       => $user->address,
+                    'city'          => $user->city,
+                    'country'       => $user->country,
+                    'company'       => $user->company,
+                    'intro'         => $user->intro,
+                    'website'       => $user->website,
+                    'github_url'    => $user->github_url,
+                    'twitter_url'   => $user->twitter_url,
+                    'facebook_url'  => $user->facebook_url,
+                    'linkedin_url'  => $user->linkedin_url,
+                    'is_verified'   => $user->is_verified,
+                    'is_sponsor'    => $user->is_sponsor,
+                    'affiliate_id'  => $user->affiliate_id,
+                    'referred_by'   => null,
+                ]);
+            }
+
         }
     }
 }

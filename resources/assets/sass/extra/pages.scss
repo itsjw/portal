@@ -1,3 +1,18 @@
 .wrapper {
-  background-color: hsl(0, 0%, 96%);
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+html, body {
+
+}
+
+.container {
+
+}
+
+.sp {
+  margin-top: 5px;
+  margin-right: 5px;
 }

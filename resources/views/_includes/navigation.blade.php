@@ -1,4 +1,4 @@
-<nav class="navbar is-danger has-shadow">
+<nav class="navbar is-light has-shadow">
     <div class="navbar-brand">
         <a class="navbar-item" href="/">
             <img src="https://raw.githubusercontent.com/PHPMap/phpmap/master/public/images/logo_big.png" alt="phpmap.co Logo" width="112" height="28">
@@ -56,7 +56,7 @@
         </div>
 
         <div class="navbar-end">
-            <div class="navbar-item">
+            <!--<div class="navbar-item">
                 <form action="/threads/search" method="post">
                     {!! csrf_field() !!}
                     <div class="field">
@@ -65,7 +65,7 @@
                         </div>
                     </div>
                 </form>
-            </div>
+            </div>-->
 
             @if (Auth::guest())
                 <a class="navbar-item " href="{{ route('login') }}">Login</a>

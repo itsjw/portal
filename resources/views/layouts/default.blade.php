@@ -39,13 +39,16 @@
 </head>
 
 <body>
-<div id="app">
+<div id="app" class="wrapper">
     @include('_includes.navigation')
 
     @yield('content')
 
     <flash message="{{ session('flash') }}"></flash>
+    <div class="push"></div>
 </div>
+
+@include('_includes.footer')
 
 <!-- Scripts -->
 <script src="https://maps.googleapis.com/maps/api/js?key={{ env('GOOGLE_MAPS_KEY') }}"></script>
