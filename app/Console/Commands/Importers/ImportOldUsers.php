@@ -46,9 +46,9 @@ class ImportOldUsers extends Command
         foreach ($users as $user) {
             if ($user->email != 'f.wartner@phpmap.co') {
                 $newUser->create([
-                    'name'     => $user->name,
-                    'email'    => $user->email,
-                    'username' => $user->username,
+                    'name'          => $user->name,
+                    'email'         => $user->email,
+                    'username'      => $user->username,
                     'password'      => $user->password ?? bcrypt(str_random(13)),
                     'avatar_path'   => null,
                     'profile_cover' => $user->profile_cover,
@@ -72,7 +72,6 @@ class ImportOldUsers extends Command
                     'referred_by'   => null,
                 ]);
             }
-
         }
     }
 }
