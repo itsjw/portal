@@ -195,16 +195,16 @@
         },
         {
             "name": "botman/botman",
-            "version": "2.1.4",
+            "version": "2.1.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/botman/botman.git",
-                "reference": "1676914d9678a357c36dd03ea9fb694584a4cc41"
+                "reference": "c5664ce0dd94ca2db93c65a2fe9d206d914a512b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/botman/botman/zipball/1676914d9678a357c36dd03ea9fb694584a4cc41",
-                "reference": "1676914d9678a357c36dd03ea9fb694584a4cc41",
+                "url": "https://api.github.com/repos/botman/botman/zipball/c5664ce0dd94ca2db93c65a2fe9d206d914a512b",
+                "reference": "c5664ce0dd94ca2db93c65a2fe9d206d914a512b",
                 "shasum": ""
             },
             "require": {
@@ -267,7 +267,7 @@
                 "bot",
                 "chatbot"
             ],
-            "time": "2017-12-01T14:23:10+00:00"
+            "time": "2017-12-04T07:14:18+00:00"
         },
         {
             "name": "cakephp/chronos",
