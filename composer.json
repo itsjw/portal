@@ -8,7 +8,7 @@
         "php": ">=7.0.0",
         "algolia/algoliasearch-client-php": "^1.23",
         "alt-three/badger": "^4.0",
-        "alt-three/emoji": "^5.1",
+        "alt-three/emoji": "^5.2",
         "botman/botman": "^2.1",
         "doctrine/dbal": "^2.6",
         "fideloper/proxy": "~3.3",
