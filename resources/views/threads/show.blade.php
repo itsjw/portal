@@ -8,6 +8,7 @@
 
 @push('styles')
     <link rel="stylesheet" href="/css/vendor/jquery.atwho.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.1/trix.css" />
 @endpush
 
 @section('content')
