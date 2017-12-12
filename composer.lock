@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "028d1929719c03fc438e757039a25c91",
+    "content-hash": "24c7ab1b52860ea89591ca79d0fdca91",
     "packages": [
         {
             "name": "algolia/algoliasearch-client-php",
@@ -126,35 +126,35 @@
         },
         {
             "name": "alt-three/emoji",
-            "version": "v5.1.0",
+            "version": "v5.2.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Emoji.git",
-                "reference": "46939bd1d55a469d277a08a22499995ec396013a"
+                "reference": "1c67ed87a22d8a8d02d2ba2763e70d18732237cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/46939bd1d55a469d277a08a22499995ec396013a",
-                "reference": "46939bd1d55a469d277a08a22499995ec396013a",
+                "url": "https://api.github.com/repos/AltThree/Emoji/zipball/1c67ed87a22d8a8d02d2ba2763e70d18732237cc",
+                "reference": "1c67ed87a22d8a8d02d2ba2763e70d18732237cc",
                 "shasum": ""
             },
             "require": {
-                "guzzlehttp/guzzle": "^5.3|^6.0",
+                "graham-campbell/guzzle-factory": "^2.2",
                 "illuminate/contracts": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
                 "illuminate/support": "5.1.*|5.2.*|5.3.*|5.4.*|5.5.*",
-                "league/commonmark": "^0.15",
+                "league/commonmark": "^0.15|^0.16",
                 "php": "^7.0"
             },
             "require-dev": {
                 "graham-campbell/analyzer": "^1.1",
                 "graham-campbell/markdown": "^8.0",
                 "graham-campbell/testbench": "^4.0",
-                "phpunit/phpunit": "^6.0"
+                "phpunit/phpunit": "^6.1"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "5.1-dev"
+                    "dev-master": "5.2-dev"
                 },
                 "laravel": {
                     "providers": [
@@ -191,7 +191,7 @@
                 "emoji",
                 "parser"
             ],
-            "time": "2017-08-15T19:46:52+00:00"
+            "time": "2017-12-10T12:00:54+00:00"
         },
         {
             "name": "botman/botman",
@@ -1250,6 +1250,59 @@
             "description": "A simple library to encode and decode JSON Web Tokens (JWT) in PHP. Should conform to the current spec.",
             "homepage": "https://github.com/firebase/php-jwt",
             "time": "2017-06-27T22:17:23+00:00"
+        },
+        {
+            "name": "graham-campbell/guzzle-factory",
+            "version": "v2.2.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/GrahamCampbell/Guzzle-Factory.git",
+                "reference": "5e2c12b565d4067ab7fb2d428e764114909783b4"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/GrahamCampbell/Guzzle-Factory/zipball/5e2c12b565d4067ab7fb2d428e764114909783b4",
+                "reference": "5e2c12b565d4067ab7fb2d428e764114909783b4",
+                "shasum": ""
+            },
+            "require": {
+                "guzzlehttp/guzzle": "^6.2",
+                "php": "^7.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "^6.0"
+            },
+            "type": "library",
+            "extra": {
+                "branch-alias": {
+                    "dev-master": "2.2-dev"
+                }
+            },
+            "autoload": {
+                "psr-4": {
+                    "GrahamCampbell\\GuzzleFactory\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Graham Campbell",
+                    "email": "graham@alt-three.com"
+                }
+            ],
+            "description": "Provides A Simple Guzzle Factory With Good Defaults",
+            "keywords": [
+                "Graham Campbell",
+                "GrahamCampbell",
+                "Guzzle",
+                "Guzzle Factory",
+                "Guzzle-Factory",
+                "http"
+            ],
+            "time": "2017-07-30T13:31:16+00:00"
         },
         {
             "name": "graham-campbell/markdown",
