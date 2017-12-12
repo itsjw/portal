@@ -27,29 +27,33 @@
 
             <div class="push"></div>
 
-            <ais-results inline-template class="columns">
 
-                <div class="column is-3" v-for="result in results" :key="result.objectID">
-                    <a :href="'@' + result.username">
-                        <div class="card">
-                            <div class="card-content">
-                                <div class="media">
-                                    <div class="media-left">
-                                        <figure class="image is-48x48">
-                                            <img :src="result.avatar_path" alt="Placeholder image">
-                                        </figure>
-                                    </div>
-                                    <div class="media-content">
-                                        <p class="title is-8">@{{ result.name }}</p>
-                                        <p class="subtitle is-8">@{{ '@' + result.username }}</p>
+            <div class="columns">
+                <ais-results >
+                    <template slot-scope="{ result }">
+                        <div :key="result.objectID">
+                            <a :href="'@' + result.username">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="media">
+                                            <div class="media-left">
+                                                <figure class="image is-48x48">
+                                                    <img :src="result.avatar_path" alt="Placeholder image">
+                                                </figure>
+                                            </div>
+                                            <div class="media-content">
+                                                <p class="title is-8">@{{ result.name }}</p>
+                                                <p class="subtitle is-8">@{{ '@' + result.username }}</p>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
+                            </a>
                         </div>
-                    </a>
-                </div>
+                    </template>
+                </ais-results>
+            </div>
 
-            </ais-results>
 
             <!--<ais-results>
 
