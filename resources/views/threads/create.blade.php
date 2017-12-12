@@ -7,7 +7,7 @@
 @endpush
 
 @push('styles')
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/trix/0.11.1/trix.css" />
 @endpush
 
 @section('content')
@@ -47,8 +47,8 @@
 
                     <div class="field">
                         <label class="label">Body:</label>
-                        <textarea name="body" id="body" class="textarea" rows="8" required>{{ old('body') }}</textarea>
-                        <small>Use Markdown with <a href="https://help.github.com/categories/writing-on-github/">GitHub-flavored</a> code blocks.</small>
+                        <trix></trix>
+                        <!--<small>Use Markdown with <a href="https://help.github.com/categories/writing-on-github/">GitHub-flavored</a> code blocks.</small>-->
                     </div>
 
                     <div class="field">
