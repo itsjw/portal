@@ -5,12 +5,18 @@ pipeline {
       parallel {
         stage('install npm dependencies') {
           steps {
-            sh 'npm install'
+            withNPM() {
+              sh 'npm install'
+            }
+            
           }
         }
         stage('compile assets') {
           steps {
-            sh 'npm run production'
+            withNPM() {
+              sh 'npm run production'
+            }
+            
           }
         }
       }
