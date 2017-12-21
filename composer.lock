@@ -6927,22 +6927,25 @@
         },
         {
             "name": "nunomaduro/collision",
-            "version": "v1.1.16",
+            "version": "v1.1.17",
             "source": {
                 "type": "git",
                 "url": "https://github.com/nunomaduro/collision.git",
-                "reference": "12d1dc55ecafcdcb83ebdc1af9d7cb4f7608c4e3"
+                "reference": "312f56cf740185ed831301096890a54ea5a02eb9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/12d1dc55ecafcdcb83ebdc1af9d7cb4f7608c4e3",
-                "reference": "12d1dc55ecafcdcb83ebdc1af9d7cb4f7608c4e3",
+                "url": "https://api.github.com/repos/nunomaduro/collision/zipball/312f56cf740185ed831301096890a54ea5a02eb9",
+                "reference": "312f56cf740185ed831301096890a54ea5a02eb9",
                 "shasum": ""
             },
             "require": {
                 "filp/whoops": "^2.1.4",
                 "php": "^7.1",
                 "symfony/console": "~2.8|~3.3|~4.0"
+            },
+            "require-dev": {
+                "phpunit/phpunit": "~6.5"
             },
             "type": "library",
             "extra": {
@@ -6980,7 +6983,7 @@
                 "php",
                 "symfony"
             ],
-            "time": "2017-12-17T21:12:10+00:00"
+            "time": "2017-12-19T20:01:32+00:00"
         },
         {
             "name": "phar-io/manifest",
