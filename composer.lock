@@ -58,16 +58,16 @@
         },
         {
             "name": "alt-three/badger",
-            "version": "v4.0.0",
+            "version": "v4.0.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/AltThree/Badger.git",
-                "reference": "b417d6b86f4d203c5eebee7eae4a3260645c9530"
+                "reference": "2c4ff32393ce976f3f99533bdd6661ae7a2dd531"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/AltThree/Badger/zipball/b417d6b86f4d203c5eebee7eae4a3260645c9530",
-                "reference": "b417d6b86f4d203c5eebee7eae4a3260645c9530",
+                "url": "https://api.github.com/repos/AltThree/Badger/zipball/2c4ff32393ce976f3f99533bdd6661ae7a2dd531",
+                "reference": "2c4ff32393ce976f3f99533bdd6661ae7a2dd531",
                 "shasum": ""
             },
             "require": {
@@ -76,9 +76,9 @@
                 "php": "^7.0"
             },
             "require-dev": {
-                "graham-campbell/analyzer": "^1.1",
-                "graham-campbell/testbench": "^4.0",
-                "phpunit/phpunit": "^6.0"
+                "graham-campbell/analyzer": "^2.0",
+                "graham-campbell/testbench": "^4.0|^5.0",
+                "phpunit/phpunit": "^6.5"
             },
             "type": "library",
             "extra": {
@@ -102,16 +102,8 @@
             ],
             "authors": [
                 {
-                    "name": "James Brooks",
-                    "email": "james@alt-three.com"
-                },
-                {
-                    "name": "Graham Campbell",
-                    "email": "graham@alt-three.com"
-                },
-                {
-                    "name": "Joseph Cohen",
-                    "email": "joe@alt-three.com"
+                    "name": "Alt Three",
+                    "email": "support@alt-three.com"
                 }
             ],
             "description": "A Badge Generator For Laravel 5",
@@ -122,7 +114,7 @@
                 "shield",
                 "svg"
             ],
-            "time": "2017-08-06T19:28:33+00:00"
+            "time": "2018-01-02T18:14:36+00:00"
         },
         {
             "name": "alt-three/emoji",
