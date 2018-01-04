@@ -2062,16 +2062,16 @@
         },
         {
             "name": "laravel/horizon",
-            "version": "v1.0.8",
+            "version": "v1.0.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/laravel/horizon.git",
-                "reference": "20ec777c3f007a4b026b93f63be6672b2fa3b43b"
+                "reference": "0979469b0b8290dc7e01c0207aad7f49c805ee70"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/laravel/horizon/zipball/20ec777c3f007a4b026b93f63be6672b2fa3b43b",
-                "reference": "20ec777c3f007a4b026b93f63be6672b2fa3b43b",
+                "url": "https://api.github.com/repos/laravel/horizon/zipball/0979469b0b8290dc7e01c0207aad7f49c805ee70",
+                "reference": "0979469b0b8290dc7e01c0207aad7f49c805ee70",
                 "shasum": ""
             },
             "require": {
@@ -2126,7 +2126,7 @@
                 "laravel",
                 "queue"
             ],
-            "time": "2017-11-04T18:13:57+00:00"
+            "time": "2018-01-03T18:00:20+00:00"
         },
         {
             "name": "laravel/passport",
